@@ -1,0 +1,82 @@
+﻿@{
+	ViewData["Title"] = "Links";
+}
+
+@{
+	string link01 = "https://www.facebook.com/KPHS68";
+	string linkText01 = "Find us on Facebook";
+
+	
+
+
+	/* To add more links, copy the last two lines above and edit them to the new link and text to display.    */
+	/* Do the same as per the note below in the "content section of Html code almost at the end.              */
+	/* Link 12 has been edited in html part to NOT open in a new tab "_blank". but rather, "_self" since it   */
+	/* now lives on this site. Remember to change it if reassigning order of tags.                            */
+
+}	
+
+<!-- Content Image Top -->
+<div Class="container pt-0 pt-md-2 pt-lg-2 px-1 px-lg-4 pb-lg-3 bg-transparent show-me-at-the-top">
+
+	<!-- Row - Image -->
+	<div class="row gx-0 gx-lg-4">		
+
+		<!-- Column - Image -->
+		<div class="mx-auto col-12 my-0 mt-lg-2 pt-lg-3 pb-lg-4 mb-lg-1 lh-sm">
+
+			<!-- Container - Image -->
+			<div class="my-card-body h-100">
+				<div class="text-center px-4 pt-3 pb-2">
+					<img alt="" class="bird-size-med" src="~/lib/svg/logos/bird-gray.svg" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Content Body -->
+<div Class="my-card-radius mt-sm-3 pt-3 pt-lg-2 px-1 px-lg-4 pb-lg-3 bg-green-dark mx-auto" style="max-width: 600px;">
+
+	<!-- Heading Row-->
+	<div class="row gx-0 gx-lg-4">
+		<div Class="col-12 mt-2 mt-lg-3">
+			<div class="my-card border-dark bg-gray-darker page-button-size mx-auto py-1 mb-4">
+				<h2 class="text-center text-white text-nowrap">More Links<img alt="" class="card-image-size ps-2" src="~/lib/svg/Cards/Links.svg" /></h2>
+			</div>
+
+			<!-- Links Description -->
+			<p class="fs-5 text-center text-bold text-gray-darker ms-3 pb-2"><span class="text-nowrap">Here are some</span> <span class="text-nowrap">more helpful Links.</span></p>
+		</div>	
+	</div>
+
+	<!-- Links Html -->
+	<div class="row gx-0 gx-lg-4">
+		<div Class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-2 mt-lg-3 mx-auto w-100">
+
+            <!-- Links -->
+			<p class="fw-normal fs-6 mb-0 lh-sm">
+                <a class="nav-link link text-decoration-underline" href="@link01" target="_blank">@linkText01</a>
+            </p>		
+			
+			@*
+				<!-- To add more links, copy previous <tr> tag here and increment the numbers (link{#} and linktext {#}), 
+				then do the same at the start of this file under the 'code' section where you actually put the link and text. 
+				Slightly confusing and putting the link and text inline in the <tr> works just as well. 
+				I just kept all the links and text together at the top to make reordering them easier. -->
+				
+				This comment does not show up when viewing page source in a browser because it is inside the extra comment out symbols.
+			*@
+
+		</div>
+	</div>	
+</div>
+<!-- End Content -->
+
+<!-- Spacing for Large Screens if needed -->
+<div class="links-view-bottom-spacing"></div>
+
+<!-- Change background image and color -->
+<script>	
+	$("body").css("background-image", "url('../PageImages/Links.webp')");
+</script>

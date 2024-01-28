@@ -1,0 +1,254 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Gallery\**" />
+    <Compile Remove="wwwroot\Media\**" />
+    <Compile Remove="wwwroot\PageImages\**" />
+    <Compile Remove="wwwroot\ShareImages\**" />
+    <Content Remove="wwwroot\Gallery\**" />
+    <Content Remove="wwwroot\Media\**" />
+    <Content Remove="wwwroot\PageImages\**" />
+    <Content Remove="wwwroot\ShareImages\**" />
+    <EmbeddedResource Remove="wwwroot\Gallery\**" />
+    <EmbeddedResource Remove="wwwroot\Media\**" />
+    <EmbeddedResource Remove="wwwroot\PageImages\**" />
+    <EmbeddedResource Remove="wwwroot\ShareImages\**" />
+    <None Remove="wwwroot\Gallery\**" />
+    <None Remove="wwwroot\Media\**" />
+    <None Remove="wwwroot\PageImages\**" />
+    <None Remove="wwwroot\ShareImages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Home\Indexxx.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\Indexxx.cshtml" />
+    <Content Remove="Views\Home\Indexxxxx.cshtml" />
+    <Content Remove="wwwroot\lib\js\javascript.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Home\Index.cshtmlold" />
+    <None Remove="Views\Home\Index.Oldcshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\consolidated-0.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\blackboard.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\blog_arch_footer.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\blog_divider.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\chalk.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\content_bg.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\eraser.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\footer_projector.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\header_bg.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\projector.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\ruler.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\sub_menu_dash.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\projector\top_menu_dash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\Gallery\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\js\javascript.js" />
+    <None Include="wwwroot\lib\svg\Buttons\Back-Black.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Back-White.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\backspace.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\FB-Home.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\FB-Round.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\FB-Square.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Google-Square.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Home.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Links.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Next.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Person.svg" />
+    <None Include="wwwroot\lib\svg\Buttons\Previous.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Links.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Members-Black.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Members-White.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Pictures-black.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Pictures-white.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Pictures.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Staff-Black.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Staff-White.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Videos-black.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Videos-white.svg" />
+    <None Include="wwwroot\lib\svg\Cards\Videos.svg" />
+    <None Include="wwwroot\lib\svg\Logos\PanthersLogo.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\Privacy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\consolidated-1.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\consolidated-15.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\consolidated-5.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\consolidated.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\favicon.ico">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blackboard.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_arch_footer.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_divider.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\body_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\body_top_grad.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\chalk.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\content_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\eraser.gif">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\eraser.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\footer_projector.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\footer_sill.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\header_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\movie_title_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\photo_caption_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\photo_links_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\photo_links_bg1.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\photo_title_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\chalk.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\content_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\eraser.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\footer_projector.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\header_bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\projector.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\ruler.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\sub_menu_dash.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\projector\top_menu_dash.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\ruler.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\sub_menu_dash.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\top_menu_dash.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\Pages\index.html">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\rw_common\images\kphsLogo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\css\images\" />
+  </ItemGroup>
+
+</Project>

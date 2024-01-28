@@ -1,0 +1,70 @@
+﻿<!-- Shared/Index.cshtml -->
+@{
+    var galleriesFolder = "Gallery";
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Shared";
+
+    // galleryFolder
+    var galleryFolder = currentController.Replace("slide", "", StringComparison.OrdinalIgnoreCase)
+                                         .Replace("combo", "", StringComparison.OrdinalIgnoreCase);
+    // galleryType
+    var galleryType = currentController.Contains("slide", StringComparison.OrdinalIgnoreCase) ? "Slideshows" :
+                      currentController.Contains("combo", StringComparison.OrdinalIgnoreCase) ? "Galleries" : "Galleries"; // Say Gallerys in Heading instead of Combos ie "Combos" : "Galleries"; 
+    galleryType ??= "Galleries"; // default - handle null
+    
+    // folders
+    var foldersPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/{galleriesFolder}/{galleryFolder}");
+    var folders = Directory.GetDirectories(foldersPath)
+                          .Where(folder => !System.IO.Path.GetFileName(folder).StartsWith("_"))
+                          .Select(folder => System.IO.Path.GetFileName(folder))
+                          .ToList();
+
+    var backgroundImage = $"{galleriesFolder}/{galleryFolder}/background.webp";
+    var imageExtensions = new[] { ".jpg", ".png", ".webp", ".svg" };
+    foreach (var extension in imageExtensions)
+    {
+        var imagePath = $"{galleriesFolder}/{galleryFolder}/background{extension}";
+        if (System.IO.File.Exists(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", imagePath)))
+        {
+            backgroundImage = imagePath;
+            break;
+        }
+    }
+}
+
+<!-- View Heading -->
+<div class="text-center my-2">
+    <h2 class="text-white">
+        @galleryFolder @galleryType
+    </h2>
+</div>
+
+<!-- Link Button Menu -->
+<div class="container justify-content-center row gx-1 gx-lg-4 my-2 p-0">
+
+    <!-- Back Link Button -->
+    <div class="col-1 menu-item">
+        <div class="bg-danger text-center p-0 border border border-dark rounded" style="width:50px; height: 35px;">
+            <a class="menu-link text-dark" style="height: 34px; display: flex; align-items: center;" asp-controller="Home" asp-action="Index">
+                <img src="lib/svg/buttons/back-white.svg" alt="Home" style="height: 24px;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Folder Links -->
+    @foreach (var folder in folders)
+    {
+        <div class="col-1 col-sm-2 menu-item" data-viewName="@folder">
+            <div id="@folder" class="bg-gray-lighter text-center p-0 border border-dark rounded">
+                <a id="@folder-link" class="menu-link text-dark" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Spacing for Large Screens if needed -->
+<div class="gallery-index-view-bottom-spacing"></div>
+
+<!-- Replaces the background-image -->
+<script>
+    $("body").css("background-image", "url('../@Url.Content(backgroundImage)')");  
+</script>

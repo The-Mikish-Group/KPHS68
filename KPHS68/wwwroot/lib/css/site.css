@@ -1,0 +1,329 @@
+/* General Custom Html stuff */
+body {
+    overflow-y: scroll;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    color: #f2f2f2;
+    font-size: 14px;
+    font: 0.85em/1.35em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background: repeat url(../../images/body_bg.png);    
+}
+
+
+/* #region   We are changing all the following items to be set to the sans serif family, each item is seperated
+    by a comma. If you set a different font in the styles.css file to any other item, then you need to add
+    that item to the list here, otherwise that item will not be affected by this font variation option */
+body,
+a:link,
+a:visited,
+#pageHeader h1,
+pageHeader h2,
+#sidebarContainer
+.sideHeader,
+#footer
+a:link,
+#footer
+a:visited,
+#navcontainer
+a,
+h1,
+h2,
+h3,
+h4,
+.blog-archive-month,
+.blog-entry-title,
+.blog-entry-date,
+.album-title,
+.album-description,
+.thumbnail-caption,
+.photo-title,
+.photo-caption,
+.movie-page-title,
+.movie-page-description,
+.movie-thumbnail-caption,
+.photo-title,
+.photo-caption,
+.movie-title {
+    font-family: "Comic Sans Ms";
+    /* #endregion */
+}
+
+
+
+
+/* don't like padding and margins on elements by default */
+container, div, h1, h2, h3, h4, h5, p{
+    cursor:default;
+    padding: 0;
+    margin: 0;
+}
+
+/* make everything a borderbox */
+* {
+    box-sizing: border-box;
+}
+
+/* no border class */
+.no-border {
+    border: none;
+}
+
+/* Cursors */ 
+.no-cursor {
+    cursor: none;
+}
+.pointer-cursor {
+    cursor: pointer;
+}
+
+/**********************/
+/* Responsive */
+
+/* #region Theme */
+#top_grad {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: block;
+    width: 102%;
+    height: 171px;
+    background: repeat-x url(../../images/body_top_grad.png);
+}
+
+html > body #top_grad {
+    width: 100%;
+}
+
+#projector {
+    width: 100%;
+    height: 192px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background: url(../../images/projector/projector.png) no-repeat center;
+}
+
+#eraser {
+    width: 113px;
+    height: 31px;
+    position: relative;
+    left: 640px;
+    top: -11px;
+    display: block;
+    background: no-repeat url(../../images/eraser.gif);
+}
+
+#chalk {
+    width: 99px;
+    height: 14px;
+    position: relative;
+    left: 324px;
+    top: -28px;
+    display: block;
+    background: url(../../images/chalk.png) no-repeat;
+}
+
+#ruler {
+    width: 28px;
+    height: 415px;
+    position: relative;
+    left: 580px;
+    top: -440px;
+    
+    display: block;
+    background: url(../../images/ruler.png) no-repeat;
+}
+
+#container {
+    background: repeat-y url(../../images/content_bg.png) 0px 171px;
+}
+
+/* #endregion */
+
+/* #region Page Header */
+#pageHeader {
+    height: 171px;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 8px;
+    background: #000000;
+    padding: 0;
+    width: 801px;
+    /*border-bottom: solid #191919 2px;*/
+    background: no-repeat url(../../images/header_bg.png) top;
+}
+
+    #pageHeader img {
+        position: relative;
+        top: auto;
+        right: auto;
+    }
+
+    #pageHeader h1 {
+        color: #ffffff;
+        font-size: 1.3em;
+        margin: 0 0 5px;
+        padding-top: 0px;
+        font-weight: bold;
+    }
+
+    #pageHeader h2 {
+        font-size: 1.1em;
+        margin: 0;
+        color: #ffffff;
+        font-weight: normal;
+    }
+/* #endregion */
+
+/* #region footer */
+#footer {
+    margin: 0;
+    padding: 0px;
+    height: 120px;
+    width: 803px;
+    position:static;
+    color: #3f3100;
+    text-shadow: 0px 1px 0px #ffffff;
+    text-align: left;
+    background: url(../../images/footer_sill.png) no-repeat center;
+}
+
+    #footer p {
+        position:relative;
+        margin: 0;
+        top: -430px;
+        padding-top: 0px;
+        padding-left: 63px;
+    }
+
+    #footer a:link, #footer a:visited {
+        color: #3f3100;
+        text-decoration: none;
+        border-style: none;
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    #footer a:hover,
+    #footer a:active {
+    }
+
+/* #endregion */
+
+/* #region Content */
+#content {
+    height:100%;
+    margin: auto;
+    padding: 0 0 0px 0;
+    width: 803px;
+    background: repeat-y url(../../images/content_bg.png) 0px 0px;
+}
+
+/* #endregion*/
+
+.btn {
+    transition: 1s ease-in-out;
+}
+.show-me-at-the-top {
+    display: none;
+}
+.show-me-at-the-bottom {
+    display: inline;
+}
+
+/* Bible Tab Stuff */
+.bible-nav-item > .nav-link {
+    color: #414042;
+    border-color: #414042;
+    border-style: solid;
+    border-width: thin;
+    border-bottom-style: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+} 
+
+/* Image Gallery Stuff */
+#image-containers {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    #image-containers div .filename {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+/* #image-containers div:hover .filename {
+            color: green !important;
+        }*/
+
+img {
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+}
+
+.menu-item {
+    min-width: 128px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu-link {
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease, font-weight 0.3s ease;
+    padding: 8px;
+    display: inline-block;
+}
+
+    .menu-link:hover {
+        color: black !important;
+        font-weight: bold !important;
+    }
+
+    .menu-link.selected {
+        font-weight: bold !important;
+    }
+
+.border-link {
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease, font-weight 0.3s ease;
+    padding: 8px;
+    display: inline-block;
+    border-color: Black !important;
+}
+
+    .border-link:hover {
+        color: black !important;
+        border-color: Black !important;
+        font-weight: bold !important;
+    }
+
+    .border-link.selected {
+        font-weight: bold !important;
+    }
+
+/* #region (BS -lg- ) (min-width: 992px) Start of Desktop */
+@media (min-width: 992px) {
+
+    .show-me-at-the-top {
+        display: inline;
+    }
+    .show-me-at-the-bottom {
+        display: none;
+    }   
+}
+/* #endregion*/
+
+

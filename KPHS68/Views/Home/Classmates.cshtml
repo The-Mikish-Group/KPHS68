@@ -1,0 +1,271 @@
+﻿@{
+    ViewData["Title"] = "Staff";
+}
+
+@{
+    string photosFolder = "/PageImages/staff-photos/";
+
+    string staffName01 = "Pastor Curt Napier";
+    string staffTitle01 = "Lead Pastor";
+    string staffPhoto01 = "napier-01.png";    
+
+    string staffText01English = "Rev. Curt & Wanda Napier have served in pastoral ministry in the Church of the Nazarene for 20 years. Ordained in 2005 at Indian Lake Nazarene Camp in Vicksburg, MI by Dr. Jim Bond, General Superintendent Emeritus, Rev. Napier has served Nazarene churches in both the Michigan and Eastern KY Districts in both the Lead Pastor and Interim Pastoral roles. He and Wanda have two adult children and four grandchildren who reside in Michigan. Their philosophy of ministry in the Church is to love and lead God’s people as God would love and lead them. The Napiers began attending Avon Park Naz in December of 2021.";
+    string staffText01Spanish = "";
+    //string staffText01Spanish = "El Reverendo Curt Napier y su esposa Wanda han servido en el ministerio pastoral en la iglesia del Nazareno durante 20 años.Fue ordenado por el Dr.Jim Bond Superintendente general emérito, en “Indian Lake Nazarene Camp, Vicksburg, MI.” El reverendo Napier ha servido en las iglesias Nazarenas del distrito de Michigan y el este de Kentucky, tanto como pastor principal y como pastor interino.Sus dos hijos y cuatro nietos viven en Michigan.Los Napier comenzaron a ser parte de la iglesia del Nazareno en Avon Park en diciembre del 2021.los ama y los guía a ellos";
+
+
+    string staffName02 = "Dr. Patricia Bridewell";
+    string staffTitle02 = "Administrative Pastor";
+    string staffPhoto02 = "bridewell-01.png";
+
+    string staffText02English = "Administrative Pastor Patricia Bridewell (Pastor Patty) joined our staff on April 18, 2021. She holds degrees from Kentucky Wesleyan College, Western Kentucky University, and Newburgh Theological Seminary, and is currently taking classes in the Ministerial Preparation Program at Nazarene Bible College.";
+    string staffText02Spanish = "";
+    //string staffText02Spanish = "Patricia Bridewell (Pastor Patty), hace parte del equipo pastoral de la iglesia como pastor en el área  administrativa. Ella se unió a nuestro equipo pastoral el 18 de abril del 2021. Graduada de las universidades Wesleyan de Kentucky, Western Kentucky y del Seminario Teológico Newburgh; y actualmente está terminando sus estudios en La Universidad Biblica del Nazareno en el Programa de Preparación Ministerial.";
+
+
+    //string staffName03 = "Pastor Jorge Cifuentes";
+    //string staffTitle03 = "Missionary";
+    //string staffPhoto03 = "Jorge-01.png";
+
+    //string staffText03English = "Associate Pastors Jorge and Evelyn joined our staff in April, 2021, as Associate Pastors of our Hispanic outreach ministry. They are the answer to six years of prayer for our ability to reach our primarily Hispanic neighborhood. Jorge and Evelyn, have over twenty years of experience in outreach and church planting/expansion. They serve as Hispanic leaders for our Heartland Mission Area, and, in that capacity, will be working in Hardee, Highlands, and DeSoto counties in conjunction with the Arcadia, Avon Park, Lake Placid, Okeechobee, and Sebring Nazarene churches.";
+    //string staffText03Spanish = "El pastor Jorge Cifuentes y su esposa Evelyn se unieron al grupo pastoral de la iglesia para apoyarnos en nuestro sueño de tener un ministerio que alcanzara a nuestra comunidad Hispana e Hispano Americana en Avon Park. Son una respuesta a seis años de oración por este ministerio. El pastor Jorge en su calidad de Pastor Asociado está encargado, junto con el apoyo de Evelyn de la misión en Heartland que cubre los condados de Hardee, Highlands y DeSoto junto con las iglesia nazarenas de Arcadia, Avon Park, Lake Placid, Okeechobee y Sebring. Ellos tienen una experiencia de más de 20 años plantando iglesias.";
+
+    //string staffName04 = "Kathryn Neff Perry";
+    //string staffTitle04 = "Christian Counselor";
+    //string staffPhoto04 = "kathrynp-01.png";
+
+    //string staffText04English = "Kathryn Neff Perry holds a Bachelor of Science in Psychology and Christian Counseling from Liberty University. She also holds a (60 hour) Master of Arts in Professional Counseling from Liberty University. She is a Licensed Mental Health Counselor (License # MH22039). Kathryn is in private practice at Footprints in the Sand Counseling Services, LLC and works from her office at AP Naz. She is the author of four books and admits the one she is most proud of is titled The Cross and The Rainbow.";
+    //string staffText04Spanish = "";
+
+    string scrString01 = photosFolder + staffPhoto01;
+    string scrString02 = photosFolder + staffPhoto02;
+    //string scrString03 = photosFolder + staffPhoto03;
+    //string scrString04 = photosFolder + staffPhoto04;
+
+}
+
+<!-- Container -->
+<div Class="pt-4 pt-lg-0 px-4 px-lg-4 pb-lg-3">
+
+    <!-- Cards Row-->
+    <div Class="row gx-0 gx-md-3 gx-lg-4">
+
+        <!-- Staff-1 -->
+        <div class="col-12 col-md-6 col-lg-6 m-lg-0 pb-3 lh-sm">
+
+            <!-- Card - Header -->
+            <div class="my-card staff-card-color px-3 px-lg-0 py-2 lh-sm text-center border border-dark">
+
+                <!-- Header Image and text -->
+                <img alt="" class="my-card staff-photo-size staff-photo-color border border-dark" src="@scrString01">
+                <h5 class="py-2">@staffTitle01</h5>
+                <button type="button" id="btnShow01Modal" class="btn btn-primary button mb-2">@staffName01</button>
+            </div>
+
+            <div class="container">
+                <div class="modal fade" tabindex="-1" id="profile01Modal"
+                     data-keyboard="false" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">@staffName01</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="my-card-footer">
+                                    <p class="fw-normal text-dark">@staffText01English</p>
+                                    <p class="fw-normal text-dark italic py-3">@staffText01Spanish</p>                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btnHide01Modal" class="btn btn-primary button">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Staff-2 -->
+        <div class="col-12 col-md-6 col-lg-6 m-lg-0 pb-3 lh-sm">
+
+            <!-- Card - Header -->
+            <div class="my-card staff-card-color px-3 px-lg-0 py-2 lh-sm text-center border border-dark">
+
+                <!-- Header Image and text -->
+                <img alt="" class="my-card staff-photo-size staff-photo-color border border-dark" src="@scrString02">
+                <h5 class="py-2">@staffTitle02</h5>
+                <button type="button" id="btnShow02Modal" class="btn btn-primary button mb-2">@staffName02</button>
+            </div>
+
+            <div class="container">
+                <div class="modal fade" tabindex="-1" id="profile02Modal"
+                     data-keyboard="false" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">@staffName02</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="my-card-footer">
+                                    <p class="fw-normal text-dark">@staffText02English</p>
+                                    <p class="fw-normal text-dark italic py-3">@staffText02Spanish</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btnHide02Modal" class="btn btn-primary button">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <!-- Staff-3 -->
+       @* <div class="col-12 col-md-6 col-lg-4 m-lg-0 pb-3 lh-sm">
+
+            <!-- Card - Header -->
+            <div class="my-card staff-card-color px-3 px-lg-0 py-2 lh-sm text-center border border-dark">
+
+                <!-- Header Image and text -->
+                <img alt="" class="my-card staff-photo-size staff-photo-color border border-dark" src="@scrString03">
+                <h5 class="py-2">@staffTitle03</h5>
+                <button type="button" id="btnShow03Modal" class="btn btn-primary button mb-2">@staffName03</button>
+            </div>
+
+            <div class="container">
+                <div class="modal fade" tabindex="-1" id="profile03Modal"
+                     data-keyboard="false" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">@staffName03</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="my-card-footer">
+                                    <p class="fw-normal text-dark">@staffText03English</p>
+                                    <p class="fw-normal text-dark italic py-3">@staffText03Spanish</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btnHide03Modal" class="btn btn-primary button">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     *@     
+
+        <!-- Staff-4 -->
+       @* <div class="col-12 col-md-6 col-lg-3 m-lg-0 pb-3 lh-sm">
+
+            <!-- Card - Header -->
+            <div class="my-card staff-card-color px-3 px-lg-0 py-2 lh-sm text-center border border-dark">
+
+                <!-- Header Image and text -->
+                <img alt="" class="my-card staff-photo-size staff-photo-color border border-dark" src="@scrString04">
+                <h5 class="py-2">@staffTitle04</h5>
+                <button type="button" id="btnShow04Modal" class="btn btn-primary button mb-2">@staffName04</button>
+            </div>
+
+            <div class="container">
+                <div class="modal fade" tabindex="-1" id="profile04Modal"
+                     data-keyboard="false" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">@staffName04</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="my-card-footer">
+                                    <p class="fw-normal text-dark">@staffText04English</p>
+                                    <p class="fw-normal text-dark italic py-3">@staffText04Spanish</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btnHide04Modal" class="btn btn-primary button">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> *@
+        
+    </div>
+</div>
+
+<!-- Content Image Bottom -->
+<div Class="pt-0 pt-lg-2 px-2 px-lg-4 pb-lg-3 bg-transparent">
+
+    <!-- Row - Image -->
+    <div class="row gx-0 gx-lg-4">
+
+        <!-- Column - Image -->
+        <div class="mx-auto col-12 mt-2 pt-lg-3 pb-lg-4 mb-lg-1 lh-sm">
+
+            <!-- Container - Image -->
+            <div class="my-card-body h-100 show-me-at-the-top">
+                <div class="text-center px-4 pt-3 pb-2">
+                    <img alt="" class="fish-size" src="~/lib/svg/logos/fish.svg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="staff-view-bottom-spacing"></div>
+
+<script type="text/javascript"> 
+    
+    $(document).ready(function () {
+        $("#profile01Modal").modal('hide');
+    });
+
+    $("#btnShow01Modal").click(function () {
+        $("#profile01Modal").modal('show');
+    });
+
+    $("#btnHide01Modal").click(function () {
+        $("#profile01Modal").modal('hide');
+    });
+
+    $(document).ready(function () {
+        $("#profile02Modal").modal('hide');
+    });
+
+    $("#btnShow02Modal").click(function () {
+        $("#profile02Modal").modal('show');
+    });
+
+    $("#btnHide02Modal").click(function () {
+        $("#profile02Modal").modal('hide');
+    });
+   
+    $(document).ready(function () {
+        $("#profile03Modal").modal('hide');
+    });
+
+    $("#btnShow03Modal").click(function () {
+        $("#profile03Modal").modal('show');
+    });
+
+    $("#btnHide03Modal").click(function () {
+        $("#profile03Modal").modal('hide');
+    });
+
+    $(document).ready(function () {
+        $("#profile04Modal").modal('hide');
+    });
+
+    $("#btnShow04Modal").click(function () {
+        $("#profile04Modal").modal('show');
+    });
+
+    $("#btnHide04Modal").click(function () {
+        $("#profile04Modal").modal('hide');
+    });
+
+</script>
+
+<script>    
+    $("body").css("background-image", "url('../PageImages/Staff.webp')");
+</script>
