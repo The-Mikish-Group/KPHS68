@@ -185,6 +185,7 @@
     <!-- Site.js -->
     <script type="text/javascript" src="~/lib/js/site.js" asp-append-version="true"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Sans+MS">
 </head>
 <body>
     <style>
@@ -207,15 +208,68 @@
             padding: 0px;
             position:inherit;
         }
-    </style>
+
+        .navbar-overhang {
+            position: absolute;
+            top: 15px;
+            transform: translateY(-10%);
+        }
+
+        .logo {
+            height: 100px;
+        }
+
+        .siteName {
+            padding-left: 120px;
+        }
+
+     </style>
 
     <!-- Top Header Navbar Menu -->
     <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-gray-darker px-0 position-relative">
+            <div class="d-flex flex-grow-1">
+
+                <!-- Set to show on lg -->
+                <img src="~/resources/kphslogo.png" class="navbar-overhang logo" />
+                <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-none d-lg-inline-block siteName" href="/">@siteName</a>
+
+                <!-- Set to show on sm -->
+                <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="/">@siteNameShort<img alt="" class="home-size px-2 pb-2" /></a>
+
+                <!-- Toggle Button -->
+                <div class="text-left pe-2 pt-1">
+                    <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Selection Choices -->
+            <div class="collapse navbar-collapse flex-grow-1 text-right px-2" id="navbarToggler">
+
+                <ul class="ps-4 navbar-nav ms-auto flex-nowrap">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="@active01 nav-link nav-link-fs" href="/"><img alt="" class="show-bottom home-size px-2 pb-2" src="~/lib/svg/buttons/home.svg" />Home</a>
+                    </li>
+
+                    <!-- Gallery -->
+                    <li class="nav-item">
+                        <a class="@active13 nav-link nav-link-fs" href="~/KPHS68Combo"><img alt="" class="show-bottom home-size px-2 pb-2" src="~/lib/svg/cards/pictures-white.svg" />Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+   @*  <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-gray-darker px-0">
             <div class="d-flex flex-grow-1">
 
                 <!-- Set to show on lg -->
-                <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-none d-lg-inline-block ps-2" href="/">@siteName</a>
+                <img height="110px" src="~/resources/kphslogo.png" /><a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-none d-lg-inline-block ps-2" href="/">@siteName</a>
 
                 <!-- Set to show on sm -->
                 <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="/">@siteNameShort<img alt="" class="home-size px-2 pb-2" src="~/lib/svg/Logos/pantherslogo.svg" alt="Bird Image" /></a>
@@ -245,7 +299,7 @@
                 </ul>
             </div>
         </nav>
-    </header>
+    </header> *@
 
     <!-- Main Content (Views) -->
         <div class="container p-0" id="MainContainer">
