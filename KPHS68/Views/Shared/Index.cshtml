@@ -1,5 +1,8 @@
 ﻿<!-- Shared/Index.cshtml -->
 @{
+    Layout = "_Layout_Plain";
+}
+@{
     var galleriesFolder = "Gallery";
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Shared";
 

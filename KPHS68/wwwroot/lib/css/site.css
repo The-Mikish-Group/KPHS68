@@ -1,24 +1,55 @@
-/* General Custom Html stuff */
+/* #region Default Stuff */
 body {
     overflow-y: scroll;
-    line-height: 1;
+    line-height: 1.4;
     padding: 0;
     margin: 0;
     color: #f2f2f2;
     font-size: 14px;
     font: 0.85em/1.35em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    text-rendering: optimizeLegibility;    
+    text-rendering: optimizeLegibility;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background: repeat url(../../images/body_bg.png);    
+    background: repeat url(/images/body_bg.png);
 }
 
+/* don't like padding and margins on elements by default */
+container, div, h1, h2, h3, h4, h5, p {
+    cursor: default;
+    padding: 0;
+    margin: 0;
+}
 
-/* #region   We are changing all the following items to be set to the sans serif family, each item is seperated
-    by a comma. If you set a different font in the styles.css file to any other item, then you need to add
-    that item to the list here, otherwise that item will not be affected by this font variation option */
+/* make everything a borderbox */
+* {
+    box-sizing: border-box;
+}
+
+.no-border {
+    border: none;
+}
+
+.no-cursor {
+    cursor: none;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+img {
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+}
+
+.btn {
+    transition: 1s ease-in-out;
+}
+/* #endregion */
+
+/* #region Change all the items to be the font of our choice */
 body,
 a:link,
 a:visited,
@@ -36,239 +67,12 @@ h1,
 h2,
 h3,
 h4,
-.blog-archive-month,
-.blog-entry-title,
-.blog-entry-date,
-.album-title,
-.album-description,
-.thumbnail-caption,
-.photo-title,
-.photo-caption,
-.movie-page-title,
-.movie-page-description,
-.movie-thumbnail-caption,
-.photo-title,
-.photo-caption,
-.movie-title {
+.viewContainer {
     font-family: "Comic Sans Ms";
-    /* #endregion */
 }
-
-
-
-
-/* don't like padding and margins on elements by default */
-container, div, h1, h2, h3, h4, h5, p{
-    cursor:default;
-    padding: 0;
-    margin: 0;
-}
-
-/* make everything a borderbox */
-* {
-    box-sizing: border-box;
-}
-
-/* no border class */
-.no-border {
-    border: none;
-}
-
-/* Cursors */ 
-.no-cursor {
-    cursor: none;
-}
-.pointer-cursor {
-    cursor: pointer;
-}
-
-/**********************/
-/* Responsive */
-
-/* #region Theme */
-#top_grad {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    display: block;
-    width: 102%;
-    height: 171px;
-    background: repeat-x url(../../images/body_top_grad.png);
-}
-
-html > body #top_grad {
-    width: 100%;
-}
-
-#projector {
-    width: 100%;
-    height: 192px;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    background: url(../../images/projector/projector.png) no-repeat center;
-}
-
-#eraser {
-    width: 113px;
-    height: 31px;
-    position: relative;
-    left: 640px;
-    top: -11px;
-    display: block;
-    background: no-repeat url(../../images/eraser.gif);
-}
-
-#chalk {
-    width: 99px;
-    height: 14px;
-    position: relative;
-    left: 324px;
-    top: -28px;
-    display: block;
-    background: url(../../images/chalk.png) no-repeat;
-}
-
-#ruler {
-    width: 28px;
-    height: 415px;
-    position: relative;
-    left: 580px;
-    top: -440px;
-    
-    display: block;
-    background: url(../../images/ruler.png) no-repeat;
-}
-
-#container {
-    background: repeat-y url(../../images/content_bg.png) 0px 171px;
-}
-
 /* #endregion */
 
-/* #region Page Header */
-#pageHeader {
-    height: 171px;
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 8px;
-    background: #000000;
-    padding: 0;
-    width: 801px;
-    /*border-bottom: solid #191919 2px;*/
-    background: no-repeat url(../../images/header_bg.png) top;
-}
-
-    #pageHeader img {
-        position: relative;
-        top: auto;
-        right: auto;
-    }
-
-    #pageHeader h1 {
-        color: #ffffff;
-        font-size: 1.3em;
-        margin: 0 0 5px;
-        padding-top: 0px;
-        font-weight: bold;
-    }
-
-    #pageHeader h2 {
-        font-size: 1.1em;
-        margin: 0;
-        color: #ffffff;
-        font-weight: normal;
-    }
-/* #endregion */
-
-/* #region footer */
-#footer {
-    margin: 0;
-    padding: 0px;
-    height: 120px;
-    width: 803px;
-    position:static;
-    color: #3f3100;
-    text-shadow: 0px 1px 0px #ffffff;
-    text-align: left;
-    background: url(../../images/footer_sill.png) no-repeat center;
-}
-
-    #footer p {
-        position:relative;
-        margin: 0;
-        top: -430px;
-        padding-top: 0px;
-        padding-left: 63px;
-    }
-
-    #footer a:link, #footer a:visited {
-        color: #3f3100;
-        text-decoration: none;
-        border-style: none;
-        font-weight: bold;
-        font-size: 1em;
-    }
-
-    #footer a:hover,
-    #footer a:active {
-    }
-
-/* #endregion */
-
-/* #region Content */
-#content {
-    height:100%;
-    margin: auto;
-    padding: 0 0 0px 0;
-    width: 803px;
-    background: repeat-y url(../../images/content_bg.png) 0px 0px;
-}
-
-/* #endregion*/
-
-.btn {
-    transition: 1s ease-in-out;
-}
-.show-me-at-the-top {
-    display: none;
-}
-.show-me-at-the-bottom {
-    display: inline;
-}
-
-/* Bible Tab Stuff */
-.bible-nav-item > .nav-link {
-    color: #414042;
-    border-color: #414042;
-    border-style: solid;
-    border-width: thin;
-    border-bottom-style: none;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-} 
-
-/* Image Gallery Stuff */
-#image-containers {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-    #image-containers div .filename {
-        color: black !important;
-        text-decoration: none !important;
-    }
-
-/* #image-containers div:hover .filename {
-            color: green !important;
-        }*/
-
-img {
-    cursor: pointer;
-    transition: border 0.3s ease-in-out;
-}
-
+/* #region Menu */
 .menu-item {
     min-width: 128px;
     white-space: nowrap;
@@ -313,17 +117,325 @@ img {
     .border-link.selected {
         font-weight: bold !important;
     }
+/* #endregion */
 
-/* #region (BS -lg- ) (min-width: 992px) Start of Desktop */
-@media (min-width: 992px) {
+/* #region Theme */
 
-    .show-me-at-the-top {
+#top_grad {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    display: block;
+    width: 102%;
+    z-index: 0;
+    height: 171px;      
+    background: repeat-x url(images/body_top_grad.png);
+}
+
+html > body #top_grad {
+    width: 100%;
+}
+
+.viewContainer {
+    background-image: url(../../images/blackboard.png);
+    border-bottom: 40px solid darkgoldenrod;
+    width: 100%;
+}
+
+#top_grad {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: block;
+    width: 102%;
+    height: 171px;
+    background: repeat-x url(../../images/body_top_grad.png);
+}
+
+html > body #top_grad {
+    width: 100%;
+}
+
+#projector {
+    width: 100%;
+    height: 192px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background: url(../../images/projector/projector.png) no-repeat center;
+}
+
+#eraser {
+    width: 113px;
+    height: 34px;
+    position: relative;
+    left: 230px;
+    top: -58px;
+    display: block;
+    background: no-repeat url(../../images/eraser.gif);
+}
+
+#chalk {
+    width: 99px;
+    height: 14px;
+    position: relative;
+    left: 120px;
+    top: -28px;
+    display: block;
+    background: url(../../images/chalk.png) no-repeat;
+}
+
+#ruler {
+    width: 28px;
+    height: 415px;
+    position: relative;
+    left: 580px;
+    top: -481px;
+    display: none;
+    background: url(../../images/ruler.png) no-repeat;
+}
+
+#groove {
+    width: 100%;
+    height: 18px;
+    position: relative;
+    left: 0px;
+    top: 28px;
+    border-radius:5px;
+    display: block;
+    background-color: lightgoldenrodyellow;
+    border-top: 1px solid black;
+    border-bottom: 3px solid gray
+}
+/* #endregion */
+
+/* #region Show Top/Bottom */
+.show-top {
+    display: none;
+}
+
+.show-bottom {
+    display: inline;
+}
+/* #endregion */
+
+/* #region (BS -sm- ) (min-width: 575px) and (max-width: 768px) Small tablet styles */
+@media (min-width: 575px) and (max-width: 768px) {
+    
+    /* #region Theme Images */
+    .viewContainer {        
+        border-right: 5px solid darkgoldenrod;
+        border-left: 5px solid darkgoldenrod;
+    }
+
+    #top_grad {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: block;
+        width: 102%;
+        height: 171px;
+        background: repeat-x url(../../images/body_top_grad.png);
+    }
+
+    html > body #top_grad {
+        width: 100%;
+    }
+
+    #projector {
+        width: 100%;
+        height: 192px;
+        display: none;
+        position: absolute;
+        bottom: 0;
+        background: url(../../images/projector/projector.png) no-repeat center;
+    }
+
+    #eraser {        
+        left: 288px;        
+    }
+
+    #chalk {      
+    }
+
+    #ruler {       
+    }
+
+    /* #endregion */
+
+    /* #region Show Top/Bottom */
+    .show-top {
+        display: none;
+    }
+
+    .show-bottom {
         display: inline;
     }
-    .show-me-at-the-bottom {
-        display: none;
-    }   
+    /* #endregion */
+
 }
-/* #endregion*/
+
+/* (BS -md- ) (min-width: 768.01px) and (max-width: 991px) Large tablet styles */
+@media (min-width: 768.01px) and (max-width: 991px) {    
+    
+    /* #region Theme Images */
+
+    .viewContainer {       
+        border-right: 20px solid darkgoldenrod;
+        border-left: 20px solid darkgoldenrod;        
+    }
+
+    #top_grad {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: block;
+        width: 102%;
+        height: 171px;
+        background: repeat-x url(../../images/body_top_grad.png);
+    }
+
+    html > body #top_grad {
+        width: 100%;
+    }
+
+    #projector {
+        width: 100%;
+        height: 192px;
+        display: none;
+        position: absolute;
+        bottom: 0;
+        background: url(../../images/projector/projector.png) no-repeat center;
+    }
+
+    #eraser {       
+        left: 384px;        
+    }
+
+    #chalk {        
+    }
+
+    #ruler {
+    }
+
+/* #endregion */  
+
+    /* #region Show Top/Bottom */
+    .show-top {
+        display: none;
+    }
+
+    .show-bottom {
+        display: inline;
+    }
+    /* #endregion */
+
+}
+
+/* (BS -lg- ) (min-width: 992px) Start of Desktop */
+@media (min-width: 992px) {
+
+    /* #region Theme Images */
+
+    .viewContainer {        
+        border-right: 20px solid darkgoldenrod;
+        border-left: 20px solid darkgoldenrod;       
+    }
+
+    #eraser {        
+        left: 590px;       
+    }
+
+    #chalk {        
+        left: 224px;        
+    }
+
+    #ruler {
+        left: 774px;
+        display: block;
+    }
+
+    /* #endregion */
+
+    /* #region Show Top/Bottom */
+    .show-top {
+        display: none;
+    }
+
+    .show-bottom {
+        display: none;
+    }
+    /* #endregion */
+
+}
+
+/* #region (min-width: 1200px) */
+@media (min-width: 1200px) {
+
+    /* #region Themes */
+
+    .viewContainer {
+        border-right: 20px solid darkgoldenrod;
+        border-left: 20px solid darkgoldenrod;
+    }
+
+    #eraser {
+        left: 640px;
+    }
+
+    #chalk {        
+    }
+
+    #ruler {       
+        left: 889px;        
+    }
+
+    /* #endregion */
+
+    /* #region Show Top/Bottom */
+    .show-top {
+        display: none;
+    }
+
+    .show-bottom {
+        display: none;
+    }
+    /* #endregion */
+
+}
+
+/* #region (min-width: 1400px) */
+@media (min-width: 1400px) {
+
+    /* #region Themes */
+
+    .viewContainer {        
+        border-right: 20px solid darkgoldenrod;
+        border-left: 20px solid darkgoldenrod;
+    }
+
+    #eraser {        
+        left: 886px;        
+    }
+
+    #chalk {
+    }
+
+    #ruler {        
+        left: 1034px;        
+    }
+
+    /* #endregion*/
+
+    /* #region Show Top/Bottom */
+    .show-top {
+        display: none;
+    }
+
+    .show-bottom {
+        display: none;
+    }
+    /* #endregion*/
+}
 
 

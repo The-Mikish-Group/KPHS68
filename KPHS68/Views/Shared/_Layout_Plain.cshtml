@@ -188,153 +188,155 @@
 </head>
 <body>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        /* Add your styling here */
+        .menu-item {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px;
+            cursor: pointer;
         }
 
-        #MainContainer {
-            flex: 1;
-            min-height: 100%;
-        }
-
-        #footer {
-            background-color: #333;
+        .current-view {
+            background-color: #3498db;
             color: #fff;
-            padding: 0px;
-            position:inherit;
         }
     </style>
 
     <!-- Top Header Navbar Menu -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-gray-darker px-0">
-            <div class="d-flex flex-grow-1">
 
-                <!-- Set to show on lg -->
-                <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-none d-lg-inline-block ps-2" href="/">@siteName</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gray-darker px-0">
+        <div class="d-flex flex-grow-1">
 
-                <!-- Set to show on sm -->
-                <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="/">@siteNameShort<img alt="" class="home-size px-2 pb-2" src="~/lib/svg/Logos/pantherslogo.svg" alt="Bird Image" /></a>
+            <!-- Set to show on lg -->
+            <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-none d-lg-inline-block ps-2 menu-item" href="/">@siteName</a>
 
-                <!-- Toggle Button -->
-                <div class="text-left pe-2 pt-1">
-                    <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+            <!-- Set to show on sm -->
+            <a style="text-decoration: none" class="text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5 menu-item" href="/">@siteNameShort<img alt="" class="home-size px-2 pb-2" src="~/lib/svg/Logos/pantherslogo.svg" alt="Bird Image" /></a>
+
+            <!-- Toggle Button -->
+            <div class="text-left pe-2 pt-1">
+                <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-
-            <!-- Selection Choices -->
-            <div class="collapse navbar-collapse flex-grow-1 text-right px-2" id="navbarToggler">
-
-                <ul class="ps-4 navbar-nav ms-auto flex-nowrap">
-
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="@active01 nav-link nav-link-fs" href="/"><img alt="" class="show-bottom home-size px-2 pb-2" src="~/lib/svg/buttons/home.svg" />Home</a>
-                    </li>
-
-                    <!-- Gallery -->
-                    <li class="nav-item">
-                        <a class="@active13 nav-link nav-link-fs" href="~/KPHS68Combo"><img alt="" class="show-bottom home-size px-2 pb-2" src="~/lib/svg/cards/pictures-white.svg" />Gallery</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content (Views) -->
-        <div class="container p-0" id="MainContainer">
-            <main role="main" class="p-0">
-                @RenderBody()
-            </main>
         </div>
-    
-    <!-- Bottom site Footer Navbar Menu -->    
-    <footer class="navbar navbar-dark border-top bg-gray-darker" role="contentinfo" aria-label="Site footer" id="footer">
+
+        <!-- Selection Choices -->
+        <div class="collapse navbar-collapse flex-grow-1 text-right px-2" id="navbarToggler">
+
+            <ul class="ps-4 navbar-nav ms-auto flex-nowrap">
+
+                <!-- Home -->
+                <li class="nav-item menu-item">
+                    <a class="@active01 nav-link nav-link-fs" href="/"><img alt="" class="show-bottom home-size px-2 pb-2" src="~/lib/svg/buttons/home.svg" />Home</a>
+                </li>
+
+                <!-- Gallery -->
+                <li class="nav-item menu-item">
+                    <a class="@active13 nav-link nav-link-fs" href="~/KPHS68Combo"><img alt="" class="show-bottom home-size px-2 pb-2" src="~/lib/svg/cards/pictures-white.svg" />Gallery</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    @* <div id="projector"></div> *@
+    <div id="top_grad">
+
+        <div class="row mx-auto m-0" id="pageHeader">
+
+            <div class="col-3">
+                <img src="~/resources/kphslogo.png" width="200" height="195" alt="KPHS Class of 1968" />
+            </div>
+
+            <div class="col-8 pt-2">
+                <h1 class="text-end text-dark">Kelvyn Park Class of 1968</h1>
+                <h2 class="text-end text-dark">KelvynPark68.com</h2>
+            </div>
+        </div>        
+
+            <!-- Main container (Views) -->
+            <div class="container" id="maincontainer"> <!-- Main Container -->
+
+                <main role="main" class="p-0"><!-- Main -->
+
+                <div id="content"><!-- Start View Content -->
+
+                    @RenderBody()
+
+                    <div id="footer"><!-- Start view footer -->
+
+                        <div id="eraser"></div>
+                        <div id="chalk"></div>
+                        <div id="ruler"></div>
+                        <p>&copy; 2024 KPHS Class of '68 <a href="#" class="084908D8-730C-4F75-B27B-1D611B31365A">Contact Us</a></p>
+
+                    </div><!-- End View footer -->
+
+                </div><!-- End View Content -->
+
+                </main><!-- End Main -->
+
+            </div><!-- End Main Container -->            
+
+    </div>
+
+    <!-- Bottom site Footer Navbar Menu -->
+    <footer class="navbar navbar-dark border-top bg-gray-darker visually-hidden" role="contentinfo" aria-label="Site footer">
 
         <div class="container text-right">
             <div class="row w-100 gx-0 gx-lg-5">
 
-                <!-- Check-in Column -->
+                <!-- Info -->
                 <div class="col-4">
                     <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">Info</h6>
                     <ul class="navbar-nav ms-auto flex-nowrap ps-2">
 
-                        <!-- Check-in -->
+                        <!-- Home -->
                         <li class="nav-item text-light">
-                            <a class="@active01 nav-link footer-fs text-nowrap " href="/">Check-In</a>
+                            <a class="@active01 nav-link footer-fs text-nowrap menu-item" href="/">About Us</a>
+                            <a class="@active01 nav-link footer-fs text-nowrap " href="/">About Us</a>
                         </li>
-
-                        <!-- Classmates -->
-                        <li class="nav-item text-light">
-                            <a class="@active07 nav-link footer-fs text-nowrap" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_classmates.cfm">Classmates</a>
-                        </li>
-
-                        <!-- In Memory -->
-                        <li class="nav-item text-light">
-                            <a class="@active08 nav-link footer-fs" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_inmemory.cfm">In Memory</a>
-                        </li>
-
-                        <!-- Missing -->
-                        <li class="nav-item text-light">
-                            <a class="@active08 nav-link footer-fs" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_classmates_missing.cfm">Missing</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <!-- 1968-2008 -->
-                <div class="col-4">
-                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">1968-2008</h6>
-                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
-
-                        <!-- 1968-2008 -->
-                        <li class="nav-item text-light">
-                            <a class="@active14 nav-link footer-fs" href="Pages/index.html" target="_blank">1968-2008</a>
-                        </li>
-
-                        <!-- 1968 Yearbook -->
-                        <li class="nav-item text-light">
-                            <a class="@active15 nav-link footer-fs" href="Pages/Yearbook/index.html" target="_blank">1968 Yearbook</a>
-                        </li>
-
-                        <!-- 1968 Graduation -->
-                        <li class="nav-item text-light">
-                            <a class="@active15 nav-link footer-fs" href="Resources/PDF/program.PDF" target="_blank">1968 Graduation</a>
-                        </li>
-
-                        <!-- 2008 Class -->
-                        <li class="nav-item text-light">
-                            <a class="@active15 nav-link footer-fs" href="ClassPic/index.html" target="_blank">2008 Class</a>
-                        </li>
-
-                        <!-- 2008 DVD -->
-                        <li class="nav-item text-light">
-                            <a class="@active15 nav-link footer-fs" href="Pages/DVD/index.html" target="_blank">2008 DVD</a>
-                        </li>
-
-                        <!-- 2008 Pictures -->
-                        <li class="nav-item text-light">
-                            <a class="@active15 nav-link footer-fs" href="Pages/Photos/index.html" target="_blank">2008 Pictures</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <!-- More -->
-                <div class="col-4 pe-0">
-                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">More</h6>
-                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
 
                         <!-- Contact -->
                         <li class="nav-item text-light">
-                            <a class="@active15 nav-link footer-fs" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_contact.cfm" target="_blank">Contact</a>
+                            <a class="@active02 nav-link footer-fs text-nowrap menu-item" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_contact.cfm">Contact Us</a>
                         </li>
+
+                        <!-- Privacy -->
+                        <li class="nav-item text-light">
+                            <a class="@active07 nav-link footer-fs text-nowrap menu-item" href="/Info/Privacy">Privacy Policy</a>
+                        </li>
+
+                        <!-- TOS -->
+                        <li class="nav-item text-light">
+                            <a class="@active08 nav-link footer-fs menu-item" href="/Info/TOS">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Features -->
+                <div class="col-4">
+                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">Features</h6>
+                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
+
+                        <!-- Email Sign-up -->
+                        <li class="nav-item text-light">
+                            <a class="@active14 nav-link footer-fs" href="https://mailchi.mp/5dc417814456/apncsignup" target="_blank">Email Sign-up</a>
+                        </li>
+
+                        <!-- Blog -->
+                        <li class="nav-item text-light">
+                            <a class="@active15 nav-link footer-fs" href="https://KPHS68.wordpress.com/" target="_blank">Blog</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Links -->
+                <div class="col-4 pe-0">
+                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">Links</h6>
+                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
 
                         <!-- Gallery -->
                         <li class="nav-item text-light">
@@ -343,7 +345,7 @@
 
                         <!-- More Links -->
                         <li class="nav-item text-light">
-                            <a class="@active12 nav-link footer-fs" href="Pages/More/index.html">More Links</a>
+                            <a class="@active12 nav-link footer-fs" href="/Info/Links">More Links</a>
                         </li>
 
                     </ul>
@@ -385,25 +387,30 @@
                 _rwObsfuscatedHref11;
             Array.from(document.getElementsByClassName("084908D8-730C-4F75-B27B-1D611B31365A")).forEach(function (x) { x.href = _rwObsfuscatedHref });
         })()
+
     </script>
-
     <script>
-        // Adjust the position of the footer based on actual content and footer height
-        function adjustFooterPosition() {
-            var mainContainer = document.getElementById('MainContainer');
-            var footer = document.getElementById('footer');
+        // Add an event listener to each menu item
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', handleMenuItemClick);
+        });
 
-            // Calculate the space between content, footer, and the bottom of the page
-            var spaceToBottom = window.innerHeight - mainContainer.offsetHeight - footer.offsetHeight;
+        function handleMenuItemClick(event) {
+            // Remove 'current-view' class from all menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('current-view');
+            });
 
-            // Adjust the position of the footer if the space is less than 0
-            footer.style.bottom = (spaceToBottom < 0) ? -spaceToBottom + 'px' : 'auto';
+            // Add 'current-view' class to the clicked menu item
+            event.target.classList.add('current-view');
+
+            // Here you can perform additional actions based on the clicked menu item
+            // For example, update the content of the page, fetch data, etc.
+            // You may also want to update the URL or use some routing mechanism.
+            // ...
         }
-
-        // Call the function when the page loads and when it resizes
-        window.addEventListener('load', adjustFooterPosition);
-        window.addEventListener('resize', adjustFooterPosition);
-    </script>   
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>

@@ -1,3 +1,8 @@
+#mainContainer {
+    max-width: 828px;
+}
+
+
 /* #region Sizes */
 .carousel-item {
     height: 386px;
@@ -68,7 +73,11 @@
 /* #endregion */
 
 /* #region (BS -lg- ) (min-width: 992px) Start of Desktop */
-@media (min-width: 992px) {    
+@media (min-width: 992px) {
+
+    #mainContainer {
+        max-width: 828px;
+    }
 
     /* #region Sizes */
     .carousel-item {
