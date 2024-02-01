@@ -291,7 +291,7 @@ a {
     }
 
 .link-white {
-    color: #ffffff;
+    color: #40996d;
 }
 
     .link-white:hover,
@@ -301,16 +301,19 @@ a {
     }
 
 .nav-link {
-    color: #DEDFE0; /* light gray */
+    /*color: #DEDFE0;*/ /* light gray */
+    color: darkgreen;    
 }
 
-    .nav-link:hover {
-        color: white;
+    .nav-link:hover,
+    .nav-link:active,
+    .nav-link:focus {
+        color:green;
+       
     }
 
-.nav-pills .nav-link.active,
-.nav-pills.show > .nav-link {
-    color: #fff;
+    .nav-pills .nav-link.active, .nav-pills.show > .nav-link {
+    color: #40996d;
     background-color: darkgreen;
     border-color: #1861ac;
 }

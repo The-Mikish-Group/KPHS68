@@ -8,18 +8,22 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\Gallery\**" />
+    <Compile Remove="wwwroot\lib\css\images\**" />
     <Compile Remove="wwwroot\Media\**" />
     <Compile Remove="wwwroot\PageImages\**" />
     <Compile Remove="wwwroot\ShareImages\**" />
     <Content Remove="wwwroot\Gallery\**" />
+    <Content Remove="wwwroot\lib\css\images\**" />
     <Content Remove="wwwroot\Media\**" />
     <Content Remove="wwwroot\PageImages\**" />
     <Content Remove="wwwroot\ShareImages\**" />
     <EmbeddedResource Remove="wwwroot\Gallery\**" />
+    <EmbeddedResource Remove="wwwroot\lib\css\images\**" />
     <EmbeddedResource Remove="wwwroot\Media\**" />
     <EmbeddedResource Remove="wwwroot\PageImages\**" />
     <EmbeddedResource Remove="wwwroot\ShareImages\**" />
     <None Remove="wwwroot\Gallery\**" />
+    <None Remove="wwwroot\lib\css\images\**" />
     <None Remove="wwwroot\Media\**" />
     <None Remove="wwwroot\PageImages\**" />
     <None Remove="wwwroot\ShareImages\**" />
@@ -42,22 +46,25 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\consolidated-0.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\blackboard.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\blog_arch_footer.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\blog_divider.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\chalk.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\content_bg.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\eraser.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\footer_projector.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\header_bg.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\projector.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\ruler.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\sub_menu_dash.png" />
-    <_ContentIncludedByDefault Remove="wwwroot\images\projector\top_menu_dash.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\blackboard.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\blog_arch_footer.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\blog_divider.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\chalk.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\content_bg.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\eraser.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\footer_projector.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\header_bg.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\projector.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\ruler.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\sub_menu_dash.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Pages\images\projector\top_menu_dash.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\Gallery\index.html" />
+    <Content Include="wwwroot\Gallery\_siteImages\kphsLogo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -97,19 +104,19 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\consolidated-1.css">
+    <Content Update="wwwroot\Pages\consolidated-1.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\consolidated-15.css">
+    <Content Update="wwwroot\Pages\consolidated-15.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\consolidated-5.css">
+    <Content Update="wwwroot\Pages\consolidated-5.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\consolidated.css">
+    <Content Update="wwwroot\Pages\consolidated.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -117,127 +124,123 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\blackboard.png">
+    <Content Update="wwwroot\Pages\images\blackboard.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\blog_arch_footer.png">
+    <Content Update="wwwroot\Pages\images\blog_arch_footer.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\blog_divider.png">
+    <Content Update="wwwroot\Pages\images\blog_divider.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\body_bg.png">
+    <Content Update="wwwroot\Pages\images\body_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\body_top_grad.png">
+    <Content Update="wwwroot\Pages\images\body_top_grad.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\chalk.png">
+    <Content Update="wwwroot\Pages\images\chalk.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\content_bg.png">
+    <Content Update="wwwroot\Pages\images\content_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\eraser.gif">
+    <Content Update="wwwroot\Pages\images\eraser.gif">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\eraser.png">
+    <Content Update="wwwroot\Pages\images\eraser.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\footer_projector.png">
+    <Content Update="wwwroot\Pages\images\footer_projector.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\footer_sill.png">
+    <Content Update="wwwroot\Pages\images\footer_sill.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\header_bg.png">
+    <Content Update="wwwroot\Pages\images\header_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\movie_title_bg.png">
+    <Content Update="wwwroot\Pages\images\movie_title_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\photo_caption_bg.png">
+    <Content Update="wwwroot\Pages\images\photo_caption_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\photo_links_bg.png">
+    <Content Update="wwwroot\Pages\images\photo_links_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\photo_links_bg1.png">
+    <Content Update="wwwroot\Pages\images\photo_links_bg1.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\photo_title_bg.png">
+    <Content Update="wwwroot\Pages\images\photo_title_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector.png">
+    <Content Update="wwwroot\Pages\images\projector.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\chalk.png">
+    <Content Update="wwwroot\Pages\images\projector\chalk.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\content_bg.png">
+    <Content Update="wwwroot\Pages\images\projector\content_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\eraser.png">
+    <Content Update="wwwroot\Pages\images\projector\eraser.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\footer_projector.png">
+    <Content Update="wwwroot\Pages\images\projector\footer_projector.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\header_bg.png">
+    <Content Update="wwwroot\Pages\images\projector\header_bg.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\projector.png">
+    <Content Update="wwwroot\Pages\images\projector\projector.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\ruler.png">
+    <Content Update="wwwroot\Pages\images\projector\ruler.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\sub_menu_dash.png">
+    <Content Update="wwwroot\Pages\images\projector\sub_menu_dash.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\projector\top_menu_dash.png">
+    <Content Update="wwwroot\Pages\images\projector\top_menu_dash.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\ruler.png">
+    <Content Update="wwwroot\Pages\images\ruler.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\sub_menu_dash.png">
+    <Content Update="wwwroot\Pages\images\sub_menu_dash.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\top_menu_dash.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="wwwroot\Pages\index.html">
+    <Content Update="wwwroot\Pages\images\top_menu_dash.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -245,10 +248,6 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\lib\css\images\" />
   </ItemGroup>
 
 </Project>
