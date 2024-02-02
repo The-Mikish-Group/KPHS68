@@ -1,8 +1,5 @@
 ﻿<!-- Shared/Index.cshtml -->
 @{
-    Layout = "_Layout";
-}
-@{
     var galleriesFolder = "Gallery";
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Shared";
 
@@ -35,39 +32,46 @@
 }
 
 <!-- View Heading -->
-<div class="text-center my-2">
-    <h2 class="text-white">
-        @galleryFolder @galleryType
-    </h2>
-</div>
+<div id="projector"></div>
 
-<!-- Link Button Menu -->
-<div class="container justify-content-center row gx-1 gx-lg-4 my-2 p-0">
+<div class="row text-center mt-5 viewContainer">
+    <div class="col-12 text-start pt-4 ms-md-3 pe-md-5">
 
-    <!-- Back Link Button -->
-    <div class="col-1 menu-item">
-        <div class="bg-danger text-center p-0 border border border-dark rounded" style="width:50px; height: 35px;">
-            <a class="menu-link text-dark" style="height: 34px; display: flex; align-items: center;" asp-controller="Home" asp-action="Index">
-                <img src="lib/svg/buttons/back-white.svg" alt="Home" style="height: 24px;">
-            </a>
+        <div class="text-center my-5">
+            <h2 class="text-white">
+                @galleryFolder @galleryType
+            </h2>
+        </div>
+
+        <!-- Link Button Menu -->
+        <div class="container justify-content-center row gx-1 gx-lg-4 my-2 p-0">
+
+            <!-- Back Link Button -->
+            <div class="col-1 menu-item">
+                <div class="bg-danger text-center p-0 border border border-dark rounded" style="width:50px; height: 35px;">
+                    <a class="menu-link text-dark" style="height: 34px; display: flex; align-items: center;" asp-controller="Home" asp-action="Index">
+                        <img src="lib/svg/buttons/back-white.svg" alt="Home" style="height: 24px;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Folder Links -->
+            @foreach (var folder in folders)
+            {
+                <div class="col-1 col-sm-2 menu-item" data-viewName="@folder">
+                    <div id="@folder" class="bg-gray-lighter text-center p-0 border border-dark rounded">
+                        <a id="@folder-link" class="menu-link text-dark" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+                    </div>
+                </div>
+            }
         </div>
     </div>
-
-    <!-- Folder Links -->
-    @foreach (var folder in folders)
-    {
-        <div class="col-1 col-sm-2 menu-item" data-viewName="@folder">
-            <div id="@folder" class="bg-gray-lighter text-center p-0 border border-dark rounded">
-                <a id="@folder-link" class="menu-link text-dark" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
-            </div>
-        </div>
-    }
 </div>
 
-<!-- Spacing for Large Screens if needed -->
+@* <!-- Spacing for Large Screens if needed -->
 <div class="gallery-index-view-bottom-spacing"></div>
 
 <!-- Replaces the background-image -->
 <script>
     $("body").css("background-image", "url('../@Url.Content(backgroundImage)')");  
-</script>
+</script> *@
