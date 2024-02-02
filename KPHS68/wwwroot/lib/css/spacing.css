@@ -1,10 +1,10 @@
 /* Responsive Extra Spacing */
 
-/* #region Extra bottom spacing */
-.about-view-bottom-spacing,
-.calendar-view-bottom-spacing,
-.picture02-view-bottom-spacing,
-.picture03-view-bottom-spacing {
+.nav-item-one {
+    padding-top: 56px;
+}
+    /* #region Extra bottom spacing */
+    .about-view-bottom-spacing, .calendar-view-bottom-spacing, .picture02-view-bottom-spacing, .picture03-view-bottom-spacing {
     min-height: 0;
 }
 .contact-view-bottom-spacing {
@@ -310,7 +310,11 @@
 
 /* #region (BS -sm- ) (min-width: 575px) and (max-width: 768px) Small tablet styles */
 @media (min-width: 575px) and (max-width: 768px) {
- 
+
+    .nav-item-one {
+        padding-top:47px;
+    }
+
     /* Extra Spacing */
     .about-view-bottom-spacing {
         min-height: 0;
@@ -355,7 +359,11 @@
 /* #endregion */
 
 /* #region (BS -md- ) (min-width: 768.01px) and (max-width: 991px) Large tablet styles */
-@media (min-width: 768.01px) and (max-width: 991px) {  
+@media (min-width: 768.01px) and (max-width: 991px) {
+
+    .nav-item-one {
+        padding-top: 44px;
+    }
 
     .about-view-bottom-spacing {
         min-height: 0;
@@ -404,6 +412,10 @@
 
 /* #region (BS -lg- ) (min-width: 992px) Start of Desktop */
 @media (min-width: 992px) {
+
+    .nav-item-one {
+        padding-top: 0;
+    }
 
     .about-view-bottom-spacing {
         min-height: 0;

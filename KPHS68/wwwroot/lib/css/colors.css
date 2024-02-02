@@ -356,87 +356,29 @@ a {
 
 /* Responsive Card colors */
 
-/* Staff Card Colors */
-.staff-card-color {
-    background-color: #4A4B4C; /* bg-gray-dark */
-    color: white;
-    transition: 1s ease-in-out;
+.siteNameBig, .siteNameSmall, nav-link, .nav-text > a {
+    padding-left: 120px;
+    color: #4f7d1f !important;
+    transition: color 0.3s ease;
 }
 
-    .staff-card-color:hover,
-    .staff-card-color:focus {
-        background-color: #DEDFE0; /* bg-gray-lighter */
-        color: black;
-    }
-
-        .staff-card-color:hover .staff-photo-color,
-        .staff-card-color:focus .staff-photo-color {
-            background-color: #4A4B4C; /* bg-gray-dark */
-        }
-
-        .staff-card-color:hover btn-primary,
-        .staff-card-color:focus btn-primary {
-            color: white;
-            background-color: #265039; /* green-darker */
-            border-color: #7d7e81; /* gray */
-        }
-
-.staff-photo-color {
-    background-color: #DEDFE0; /* bg-gray-lighter */
-    color: black;
-    transition: 1s ease-in-out;
+.nav-link:active,
+.nav-link:hover,
+.nav-link:focus {
+    color: #80b24d !important;
 }
 
-/* Home Card Colors */
-.home-card-header-color {
-    background-color: #265039; /* bg-green-darker */
+.chalk-link {
+    text-decoration: none;
+    border-bottom: 2px dotted #b1b2b3;
     color: white;
 }
 
-    .home-card-header-color:hover,
-    .home-card-header-color:focus {
-        border: solid;
-        border-width: thin;
-        border-color: black;
-        background-color: #4DAF7C; /* bg-green */
-        color: black;
+    .chalk-link:hover,
+    .chalk-link:active,
+    .chalk-link:focus {
+        color: #80b24d;
     }
 
-        .home-card-header-color:hover .home-card-footer-color,
-        .home-card-header-color:focus .home-card-footer-color {
-            background-color: #DEDFE0; /* bg-gray-lighter*/
-            transition: 1s ease-in-out;
-        }
-
-        .home-card-header-color:hover .btn-primary,
-        .home-card-header-color:focus .btn-primary {
-            color: white;
-            background-color: #265039; /* green-darker */
-            border-color: #7d7e81; /* gray */
-        }
-
-        .home-card-header-color:hover .image-dark-show,
-        .home-card-header-color:focus .image-dark-show {
-            display: inline-block;
-        }
-
-        .home-card-header-color:hover .image-light-show,
-        .home-card-header-color:focus .image-light-show {
-            display: none;
-        }
-
-.home-card-footer-color {
-    background-color: #5DBF8B; /* bg-green-light */
-    color: black;
-    transition: 1s ease-in-out;
-}
-
-.image-light-show {
-    display: inline-block;
-}
-
-.image-dark-show {
-    display: none;
-}
 
 /* #endregion */

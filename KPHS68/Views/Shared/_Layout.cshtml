@@ -20,7 +20,7 @@
     string shareImage = "About-ls.jpg";
     string shareImageFolder = siteURL + "Gallery/_ShareImages/";
     string imageWidth = "1200";
-    string imageHeight = "630";    
+    string imageHeight = "630";
 
     // Page Share Settings - (shows on "PageShare" card when a link is shared)
     string ogSite_Name = siteOrganization;
@@ -103,83 +103,41 @@
     <link rel="stylesheet" href="~/lib/css/site.css" />
 
     <!-- Site.js -->
-    <script type="text/javascript" src="~/lib/js/site.js" asp-append-version="true"></script>    
+    <script type="text/javascript" src="~/lib/js/site.js" asp-append-version="true"></script>
 
 </head>
 <body>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        #MainContainer {
-            flex: 1;
-            min-height: 100%;
-        }
-
-        #footer {            
-            padding: 0px;
-            position:inherit;
-        } 
-
-        .navbar-overhang {
-            position: absolute;
-            top: 15px;
-            transform: translateY(-10%);
-        }
-
-        .logo {
-            height: 100px;
-        }
- 
-        .siteName {
-            padding-left: 120px;
-            color: darkgreen;
-        }
-
-        .nav-text > a {
-            color: darkgreen;
-        }
-
-        p a {
+    <style> 
+        .chalk-link {
             text-decoration: none;
             border-bottom: 2px dotted #b1b2b3;
             color: white;
-        } 
-
-        .nav-link {
-            color: darkgreen !important;
-            transition: color 0.3s ease;
         }
+       /*  p a {
+            text-decoration: none;
+            border-bottom: 2px dotted #b1b2b3;
+            color: white;
+        } */
 
-            .nav-link:active,
-            .nav-link:hover,
-            .nav-link:focus {
-                color: lightgreen !important;
-            }
-
-     </style>
-
+    </style>
+    <div id="top_grad"> </div>
     <!-- Top Header Navbar Menu -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom px-0 position-relative">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom px-0 position-relative ">
             <div class="d-flex flex-grow-1">
 
                 <!-- Set to show on lg -->
                 <img src="~/Gallery/_siteImages/kphsLogo.png" class="navbar-overhang logo" />
-                <a style="text-decoration: none" class="nav-text nav-text-fs text-green-darker d-none d-lg-inline-block siteName" href="/">@siteName</a>
+
+                <a style="text-decoration: none" class="nav-text nav-text-fs text-green-darker d-none d-lg-inline-block siteNameBig" href="/">@siteName</a>
 
                 <!-- Set to show on sm -->
-                <a style="text-decoration: none" class="nav-text text-decoration-none navbar-brand navbar-text nav-text-fs text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="/">@siteNameShort<img alt="" class="home-size px-2 pb-2" /></a>
+                <a style="text-decoration: none" class="nav-text text-decoration-none navbar-brand navbar-text nav-text-fs text-green-darker d-lg-none d-inline-block w-100 text-center me-0 ps-5 siteNameSmall" href="/">@siteNameShort<img alt="" class="navbar-overhang logo px-2 pb-2" /></a>
 
                 <!-- Toggle Button -->
                 <div class="text-left pe-2 pt-1">
                     <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon text-green-darker"></span>
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
             </div>
@@ -189,10 +147,10 @@
                 <ul class="ps-4 navbar-nav ms-auto flex-nowrap">
                     @* <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link nav-link-fs" href="/">Home</a>
+                    <a class="nav-link nav-link-fs" href="/">Home</a>
                     </li> *@
                     <!-- Check-in -->
-                    <li class="nav-item">
+                    <li class="nav-item nav-item-one">
                         <a class="nav-link nav-link-fs" target="_blank" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/page1.htm">Check-In</a>
                     </li>
 
@@ -205,13 +163,13 @@
 
                             <!-- Classmates -->
                             <li><a class="dropdown-item" target="_blank" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_classmates.cfm">Classmates</a></li>
-                            
+
                             <!-- In Memory -->
                             <li><a class="dropdown-item" target="_blank" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_inmemory.cfm">In Memory</a></li>
-                            
+
                             <!-- Missing -->
                             <li><a class="dropdown-item" target="_blank" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_classmates_missing.cfm">Missing</a></li>
-                        
+
                         </ul>
                     </li>
 
@@ -228,7 +186,7 @@
                         <ul class="dropdown-menu" aria-labelledby="yearbookDropdown">
 
                             <!-- 1968-2008 -->
-                           @*  <li><a class="dropdown-item" href="~/Pages/DVD.html">1968-2008</a></li> *@
+                            @*  <li><a class="dropdown-item" href="~/Pages/DVD.html">1968-2008</a></li> *@
 
                             <!-- Yearbook -->
                             <li><a class="dropdown-item" href="~/Pages/Yearbook.html">Yearbook</a></li>
@@ -256,13 +214,15 @@
     </header>    
 
     <!-- Main Content (Views) -->
-        <div class="container p-0" id="MainContainer">
-            <main role="main" class="p-0">
-                @RenderBody()
-            </main>
-        </div>
-        
-    <!-- Bottom site Footer Navbar Menu -->    
+    <div class="container p-0" id="MainContainer">
+        <main role="main" class="p-0">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+    <!-- Bottom site Footer Navbar Menu -->
     <footer class="navbar navbar-dark border-top bg-white" role="contentinfo" aria-label="Site footer" id="footer">
 
         <div class="container text-right">
@@ -270,7 +230,7 @@
 
                 <!-- Check-in Column -->
                 <div class="col-4">
-                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">Info</h6>
+                    <h6 class="navbar-text navbar-text-footer-fs text-green-darker mb-0">Info</h6>
                     <ul class="navbar-nav ms-auto flex-nowrap ps-2">
 
                         <!-- Check-in -->
@@ -298,17 +258,17 @@
 
                 <!-- 1968-2008 -->
                 <div class="col-4">
-                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">1968-2008</h6>
+                    <h6 class="navbar-text navbar-text-footer-fs text-green-darker mb-0">1968-2008</h6>
                     <ul class="navbar-nav ms-auto flex-nowrap ps-2">
 
-                       @*  <!-- 1968-2008 -->
+                        @*  <!-- 1968-2008 -->
                         <li class="nav-item text-light">
-                            <a class="nav-link footer-fs" href="Pages/DVD.html" target="_blank">1968-2008</a>
+                        <a class="nav-link footer-fs" href="Pages/DVD.html" target="_blank">1968-2008</a>
                         </li> *@
 
                         <!-- 1968 Yearbook -->
                         <li class="nav-item text-light">
-                            <a class="nav-link footer-fs" href="Pages/Yearbook/.html" target="_blank">1968 Yearbook</a>
+                            <a class="nav-link footer-fs" href="Pages/Yearbook.html" target="_blank">1968 Yearbook</a>
                         </li>
 
                         <!-- 1968 Graduation -->
@@ -336,12 +296,12 @@
 
                 <!-- More -->
                 <div class="col-4 pe-0">
-                    <h6 class="navbar-text navbar-text-footer-fs text-white mb-0">More</h6>
+                    <h6 class="navbar-text navbar-text-footer-fs text-green-darker mb-0">More</h6>
                     <ul class="navbar-nav ms-auto flex-nowrap ps-2">
 
                         <!-- Contact -->
-                        <li class="nav-item ">
-                            <a class="nav-link footer-fs text-light" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_contact.cfm" target="_blank">Contact</a>
+                        <li class="nav-item text-light">
+                            <a class="nav-link footer-fs" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_contact.cfm" target="_blank">Contact</a>
                         </li>
 
                         <!-- Gallery -->
@@ -361,7 +321,7 @@
 
         <!-- Copyright -->
         <div class="w-100 bg-gray-darker text-white pt-4">
-            <p class="text-center py-2 text-white" style="font-size: 10px;">Copyright © @DateTime.Now.Year - All Rights Reserved.</p>
+            <p class="text-center py-2 text-white" style="font-size: 10px;">@siteNameShort Copyright © @DateTime.Now.Year - All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -413,7 +373,7 @@
         // Call the function when the page loads and when it resizes
         window.addEventListener('load', adjustFooterPosition);
         window.addEventListener('resize', adjustFooterPosition);
-    </script>   
+    </script>
 
 </body>
 </html>

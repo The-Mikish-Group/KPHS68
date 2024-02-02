@@ -7,9 +7,18 @@
 .carousel-item {
     height: 386px;
 }
-.logo-size {
-    height: 360px;
+
+/* Logo settings*/
+.navbar-overhang {
+    position: absolute;
+    top: 15px;
+    transform: translateY(-10%);
 }
+
+.logo {
+    height: 100px;
+}
+
 .home-size {
     height: 30px;
 }
@@ -51,9 +60,7 @@
     .carousel-item {
         height: 400px;
     }
-    .logo-size {
-        height: 400px;
-    }      
+        
     /* #endregion */   
 }
 /* #endregion  */
@@ -64,10 +71,7 @@
     /* #region Sizes */
     .carousel-item {
         height: 542px;
-    }
-    .logo-size {
-        height: 428px;
-    }    
+    }      
     /* #endregion */
 }
 /* #endregion */
@@ -83,9 +87,7 @@
     .carousel-item {
         height: 395px;
     }
-    .logo-size {
-        height: 167px;
-    }  
+    
     /* #endregion */    
 }
 /* #endregion*/
@@ -97,9 +99,7 @@
     .carousel-item {
         height: 474px;
     }
-    .logo-size {
-        height: 286px;
-    }  
+    
     /* #endregion */
 }
 /* #endregion */
@@ -111,8 +111,5 @@
     .carousel-item {
         height: 550px;
     }
-    .logo-size {
-        height: 362px;
-    }  
-}
+ }
 /* #endregion */
