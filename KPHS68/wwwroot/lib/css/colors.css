@@ -355,13 +355,18 @@ a {
     border-bottom: 2px dotted #b1b2b3;
     color: white;
 }
-
+   
     .chalk-link:hover,
     .chalk-link:active,
     .chalk-link:focus {
         color: #80b24d;
     }
 
+.chalk-link-selected {
+    text-decoration: none;
+    border-bottom: 2px dotted #80b24d;
+    color: #80b24d;
+}
 #back {
     border: 1px solid transparent;
     border-radius: 3px;

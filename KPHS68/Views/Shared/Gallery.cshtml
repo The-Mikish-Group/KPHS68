@@ -178,49 +178,47 @@
             <!-- Back Link Button -->
             <div class="col-2 text-end">
                 <div class="d-block">
-                    <a class="chalk-link fs-5" href="~/KPHS68Combo" id="xback">Back</a>
+                    <a class="chalk-link fs-6" href="~/KPHS68Combo" id="xback">Back</a>
                 </div>
             </div>
 
-            <!-- Heading -->
-            <div class=" col-10 text-center my-2">
-                <h2 class="text-white">
-                    @imagefolder
-                </h2>
+            <!-- Gallery Links -->
+            <div class=" col-10 text-center my-0 mx-auto" style="width:300px;">
+
+                <!-- Folder Links -->
+                <div class="row">
+                    @foreach (var folder in folders)
+                    {
+                        <dir id="@folder" class="col-6 mt-0 text-start">
+                            <a id="@folder-link" class="chalk-link fs-6" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+                        </dir>
+                    }
+                </div>
+
             </div>
 
         </div>
-                
-        <!-- Folder Links -->        
-        <div class="row mx-auto" style="width:300px;">
-            @foreach (var folder in folders)
-            {
-                <dir class="col-6 mt-2 text-start">
-                    <a id="@folder-link" class="chalk-link fs-6" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
-                </dir>
+
+    </div>    
+
+    <style>
+        .slideshow-button {
+                height: 28px;
+                border: 1px solid transparent;
+                border-radius: 3px;
+        }
+
+            .slideshow-button:hover,
+            .slideshow-button:hover,
+            .slideshow-button:hover {
+                    border: 1px solid black;
             }
-        </div>       
-    </div>
-   
 
-<style>
-    .slideshow-button {
-            height: 28px;
-            border: 1px solid transparent;
-            border-radius: 3px;
-    }
-
-        .slideshow-button:hover,
-        .slideshow-button:hover,
-        .slideshow-button:hover {
-                border: 1px solid black;
-        }
-
-        .slideshow-button-image {
-            width: 26px;
-            height: 26px;            
-        }
-</style>
+            .slideshow-button-image {
+                width: 26px;
+                height: 26px;            
+            }
+    </style>
 
     <!-- Content Column -->
     <div class="col-12 text-start pt-4">
@@ -262,8 +260,6 @@
                 <div class="col-12 p-0 m-0 mb-3">
 
                     <container class="p-0 m-0">
-
-
 
                         <!-- Carousel Control-->
                         <div id="CarouselControl" class="carousel slide pointer-event" data-bs-ride="carousel">
@@ -335,16 +331,13 @@
 <script>
 
     var mainElement = document.getElementById("@imagefolder");
-    var secondaryElement = document.getElementById("@imagefolder-link");
-
     mainElement.style.pointerEvents = 'none';
-    secondaryElement.classList.add("selected");
-    secondaryElement.classList.add("hidden");
 
-    @*  mainElement.classList.toggle("bg-gray-lighter");
-        mainElement.classList.toggle("bg-gray-dark");
-        secondaryElement.classList.toggle("text-dark");
-        secondaryElement.classList.toggle("text-light"); *@
+    var secondaryElement = document.getElementById("@imagefolder-link");
+    if (secondaryElement.classList.contains("chalk-link")) {
+        secondaryElement.classList.remove("chalk-link");
+        secondaryElement.classList.add("chalk-link-selected");
+    } 
 
 </script>
 
