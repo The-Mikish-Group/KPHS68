@@ -188,6 +188,8 @@
     <Content Include="wwwroot\Gallery\KPHS68\1968-2008\quinnc_thumb.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\1968-2008\reinings.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\1968-2008\reinings_thumb.jpg" />
+    <Content Include="wwwroot\Gallery\KPHS68\1968-2008\reunion.png" />
+    <Content Include="wwwroot\Gallery\KPHS68\1968-2008\reunion_thumb.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\1968-2008\ritchieg.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\1968-2008\ritchieg_thumb.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\1968-2008\riversj.jpg" />
@@ -1133,6 +1135,7 @@
     <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\treiberec_thumb.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\TreiberEvelyn.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\TreiberEvelyn_thumb.jpg" />
+    <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\treibere_thumb.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\underwoodjc.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\underwoodjc_thumb.jpg" />
     <Content Include="wwwroot\Gallery\KPHS68\KPHS 1968\UnderwoodJennifer.jpg" />
