@@ -290,26 +290,14 @@ a {
         color: #8e774d; /* text-gold */
     }
 
-.link-white {
-    color: #40996d;
-}
-
-    .link-white:hover,
-    .link-white:active,
-    .link-white:focus {
-        color: #40996d; /* green-dark */
-    }
-
 .nav-link {
-    /*color: #DEDFE0;*/ /* light gray */
     color: darkgreen;    
-}
+}   
 
-    .nav-link:hover,
     .nav-link:active,
+    .nav-link:hover,
     .nav-link:focus {
-        color:green;
-       
+        color: #80b24d !important;
     }
 
     .nav-pills .nav-link.active, .nav-pills.show > .nav-link {
@@ -362,12 +350,6 @@ a {
     transition: color 0.3s ease;
 }
 
-.nav-link:active,
-.nav-link:hover,
-.nav-link:focus {
-    color: #80b24d !important;
-}
-
 .chalk-link {
     text-decoration: none;
     border-bottom: 2px dotted #b1b2b3;
@@ -380,13 +362,49 @@ a {
         color: #80b24d;
     }
 
-#back {  
+#back {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: transparent;
 }
 
     #back:hover,
     #back:focus,
     #back:active {
+        border: 1px solid darkgreen;
         background: #80b24d;
-        border-radius:3px;
+        
     }
+
+    /* #region Slideshow bar buttons */
+#Previous {
+    border: 1px solid transparent;
+}
+
+    #Previous:hover,
+    #Previous:active,
+    #Previous:focus {
+        border: 1px solid black;
+    }
+
+#Next {
+    border: 1px solid transparent;
+}
+
+    #Next:hover,
+    #Next:active,
+    #Next:focus {
+        border: 1px solid black;
+    }
+
+#Copy {
+    border: 1px solid transparent;
+}
+
+    #Copy:hover,
+    #Copy:active,
+    #Copy:focus {
+        border: 1px solid black;
+    }
+
 /* #endregion */

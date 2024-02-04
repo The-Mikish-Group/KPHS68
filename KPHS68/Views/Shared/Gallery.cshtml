@@ -20,7 +20,7 @@
             return new Size(image.Width, image.Height);
         }
     }
-   
+
     // Get the folders for the menu links
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Shared";
     var galleryFolder = currentController
@@ -131,7 +131,7 @@
 
     #Previous {
         border: 1px solid transparent;
-    }        
+    }
 
         #Previous:hover,
         #Previous:active,
@@ -163,102 +163,108 @@
 <!-- Go to Top button -->
 <button type="button" onclick="topFunction()" id="top-button" title="Go to top">Top</button>
 
-<!-- Stores current image in Slide -->
+<!-- Stores current image link in Slide -->
 <input title="ImageLink" hidden type="text" spellcheck="false" value="" id="imageLink">
 
 <!-- View Container Row -->
-<div class="row  mt-5 viewContainer p-0">
+<div class="row  mt-5 viewContainer">
 
     <!-- Menu Column -->
-    <div class="col-12 text-start pt-4 px-0">
+    <div class="col-12 text-start pt-4">
 
-        <!-- Menu Container -->
-        <container>
+        <!-- Heading Row -->
+        <div class="row">
 
-            <!-- Heading Row -->
-            <div class="row">
-
-                <!-- Back Link Button -->
-                <div class="col-1 ps-4 text-center d-flex">
-                    <a style="height: 26px; width:36px;" href="~/KPHS68Combo" id="back">
-                        <img style="height: 25px; width:24px;" src="/lib/svg/buttons/back-white.svg" alt="Home">
-                    </a>
+            <!-- Back Link Button -->
+            <div class="col-2 text-end">
+                <div class="d-block">
+                    <a class="chalk-link fs-5" href="~/KPHS68Combo" id="xback">Back</a>
                 </div>
-                @* <div class="col-1 text-center d-flex">
-                <a style="height: 24px; width: 36px;" asp-controller="Home" asp-action="Index" id="back">
-                <img style="height: 24px; width:24px;" src="/lib/svg/buttons/back-white.svg" alt="Home">
-                </a>
-                </div> *@
-                <!-- Heading -->
-                <div class=" col-11 text-center my-2">
-                    <h2 class="text-white" style="margin-left:-40px;">
-                        @imagefolder
-                    </h2>
-                </div>
-
             </div>
 
-            <!-- Gallery Links -->
-            <div class="container text-center my-2">
-
-                <!-- Folder Links -->
-                <div class="mx-auto">
-                    <ul class="list-unstyled d-inline-block" style="width:130px;">
-                        @foreach (var folder in folders)
-                        {
-                            <li class="mt-2 text-start">
-                                <a id="@folder-link" class="chalk-link fs-5" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
-
+            <!-- Heading -->
+            <div class=" col-10 text-center my-2">
+                <h2 class="text-white">
+                    @imagefolder
+                </h2>
             </div>
 
-        </container>
+        </div>
 
+        <!-- Gallery Links -->
+        <div class="container text-center my-2">
+
+            <!-- Folder Links -->
+            <div class="mx-auto">
+                <ul class="list-unstyled d-inline-block" style="width:130px;">
+                    @foreach (var folder in folders)
+                    {
+                        <li class="mt-2 text-start">
+                            <a id="@folder-link" class="chalk-link fs-5" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <!-- Content Column -->
-    <div class="col-12 text-start pt-4 px-0">
+<style>
+    .slideshow-button {
+            height: 28px;
+            border: 1px solid transparent;
+            border-radius: 3px;
+    }
 
-        <!-- Display Slideshows -->
+        .slideshow-button:hover,
+        .slideshow-button:hover,
+        .slideshow-button:hover {
+                border: 1px solid black;
+        }
+
+        .slideshow-button-image {
+            width: 26px;
+            height: 26px;            
+        }
+</style>
+
+    <!-- Content Column -->
+    <div class="col-12 text-start pt-4">
+
+        <!-- Display Slideshow -->
         @if (galleryType == "Slideshows" || galleryType == "Combos")
         {
-            
+
             <!-- Slideshow Controls -->
-            <div id="my-group-1" class="row Container-fluid text-center">
+            <div id="SlideshowControls" class="row container-fluid text-center mb-2">
 
                 <!-- Prev -->
-                <div class="col text-end p-0 m-0">
-                    <button class="rounded-2" id="Previous" type="button" title="Previous image">
-                        <img alt="Prev" style="width:24px; height: 26px;" src="/lib/svg/Buttons/Previous.svg"> Prev
+                <div class="col text-end">
+                    <button id="Previous" class="slideshow-button" type="button" title="Previous image">
+                        <img class="slideshow-button-image" alt="Prev" src="/lib/svg/Buttons/Previous.svg"> Prev
                     </button>
                 </div>
 
                 <!-- Copy -->
-                <div class="col p-0 m-0 bg-gainsboro">
-                    <button class="rounded-2" id="Copy" type="button" title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
-                        <img alt="Copy" style="width:26px; height:26px;" src="~/lib/svg/Buttons/Links.svg"> Copy Link
-                    </button>
+                <div class="col text-center">
+                    <button id="Copy" class="slideshow-button" type="button" title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
+                        <img alt="Copy" class="slideshow-button-image" src="~/lib/svg/Buttons/Links.svg"> Copy 
+                        </button>
                 </div>
 
                 <!-- Next -->
-                <div class="col text-start p-0 m-0">
-                    <button class="rounded-2" type="button" id="Next" title="Next image">
-                        Next <img alt="Next" style="width:24px; height: 26px;" src="/lib/svg/Buttons/Next.svg">
+                <div class="col text-start">
+                    <button id="Next" class="slideshow-button" type="button" title="Next image">
+                        Next <img class="slideshow-button-image" alt="Next" src="/lib/svg/Buttons/Next.svg">
                     </button>
                 </div>
 
-            </div>
+            </div>            
 
-            <div class="mt-1"></div>
-
-            <!-- My Slideshow -->
-            <div id="my-group-2" class="row container-fluid text-center p-0 m-0">
+            <!-- Slideshow -->
+            <div id="my-group-2" class="row container-fluid text-center mb-2 mx-0 px-0">
 
                 <!-- Column Carousel -->
-                <div class="col-12 p-0 m-0">
+                <div class="col-12 p-0 m-0 mb-3">
 
                     <container class="p-0 m-0">
 
@@ -330,16 +336,19 @@
 
 <!-- Toggle the Current Menu Button to indicate it is selected -->
 <script>
+
     var mainElement = document.getElementById("@imagefolder");
     var secondaryElement = document.getElementById("@imagefolder-link");
 
-    @* mainElement.classList.toggle("bg-gray-lighter");
-        mainElement.classList.toggle("bg-gray-dark"); *@
-        mainElement.style.pointerEvents = 'none';
+    mainElement.style.pointerEvents = 'none';
+    secondaryElement.classList.add("selected");
+    secondaryElement.classList.add("hidden");
 
-    @* secondaryElement.classList.toggle("text-dark");
+    @*  mainElement.classList.toggle("bg-gray-lighter");
+        mainElement.classList.toggle("bg-gray-dark");
+        secondaryElement.classList.toggle("text-dark");
         secondaryElement.classList.toggle("text-light"); *@
-        secondaryElement.classList.add("selected");
+
 </script>
 
 <!-- Keep imageLink up to date each slide. -->

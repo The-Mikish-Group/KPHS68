@@ -34,44 +34,52 @@
 <!-- View Heading -->
 <div id="projector"></div>
 
-<div class="row text-center mt-5 viewContainer">
-    <div class="col-12 text-start pt-4 ms-md-3 pe-md-5">
+<!-- View Container Row -->
+<div class="row mt-5 viewContainer">
+
+    <!-- Menu Column -->
+    <div class="col-12 text-start pt-4">
+ 
+        <!-- Heading -->
+     <div class="row">
+
+        <!-- Back Link Button -->
+        <div class="col-2 text-end">
+            <div class="d-block">
+                <a class="chalk-link fs-5" href="~/" id="xback">Home</a>
+            </div>
+        </div>
 
         <!-- Heading -->
-        <div class="row">
+        <div class=" col-10 text-center my-2">
+            <h2 class="text-white">
+                @galleryFolder
+            </h2>
+        </div>
 
-            <!-- Back Link Button -->
-            <div class="col-1 text-center d-flex">
-                <a style="height: 24px; width: 36px;" asp-controller="Home" asp-action="Index" id="back">
-                    <img style="height: 24px; width:24px;" src="/lib/svg/buttons/back-white.svg" alt="Home">
-                </a>
-            </div>
+     </div>
 
-            <!-- Heading -->
-            <div class=" col-11 text-center my-2">
-                <h2 class="text-white" style="margin-left:-40px;">
-                    @galleryFolder
-                </h2>
-            </div>
+    <!-- Gallery Links -->
+    <div class="container text-center my-2">
+
+        <!-- Folder Links -->
+        <div class="mx-auto">
+
+            <ul class="list-unstyled d-inline-block" style="width:130px;">
+
+                @foreach (var folder in folders)
+                {
+                    <li class="mt-2 text-start">
+                        <a id="@folder-link" class="chalk-link fs-5" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+                    </li>
+                }
+
+            </ul>
 
         </div>
 
-        <!-- Link Button Menu -->
-        <div class="container text-center my-2">
 
-            <!-- Folder Links -->
-            <div class="mx-auto">
-                <ul class="list-unstyled d-inline-block" style="width:130px;">
-                    @foreach (var folder in folders)
-                    {
-                        <li class="mt-2 text-start">
-                            <a id="@folder-link" class="chalk-link fs-5" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
-                        </li>
-                    }
-                </ul>
-            </div>
-
-        </div>        
+    </div>        
 
     </div>
 </div>
