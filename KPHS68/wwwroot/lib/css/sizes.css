@@ -5,7 +5,7 @@
 
 /* #region Sizes */
 .carousel-item {
-    height: 386px;
+    height: auto;
 }
 
 /* Logo settings*/
@@ -51,6 +51,15 @@
     font-size: 16px;
 }
 
+.CarouselItem {
+    width: 100%;
+    height: auto !important;
+}
+
+#CarouselImage {
+    height: auto;
+    width: 100%;
+}
 /* #endregion */
 
 /* #region (BS -sm- ) (min-width: 575px) and (max-width: 768px) Smaller tablets */
@@ -58,7 +67,7 @@
 
     /* #region Sizes */
     .carousel-item {
-        height: 400px;
+        /*height: 522px;*/
     }
         
     /* #endregion */   
@@ -70,7 +79,7 @@
 
     /* #region Sizes */
     .carousel-item {
-        height: 542px;
+        /*height: 542px;*/
     }      
     /* #endregion */
 }
@@ -85,7 +94,7 @@
 
     /* #region Sizes */
     .carousel-item {
-        height: 395px;
+       /* height: 702px;*/
     }
     
     /* #endregion */    
@@ -97,7 +106,7 @@
 
     /* #region Sizes */
     .carousel-item {
-        height: 474px;
+        /*height: 824px;*/
     }
     
     /* #endregion */
@@ -109,7 +118,7 @@
 
     /* #region Sizes */
     .carousel-item {
-        height: 550px;
+       /* height: 972px;*/
     }
  }
 /* #endregion */

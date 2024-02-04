@@ -8,6 +8,7 @@ body {
     margin: 0;
     color: #f2f2f2;
     font-size: 14px;
+    font-family: 'Comic Sans MS', sans-serif;
     font: 0.85em/1.35em 'Comic Sans MS', cursive, sans-serif;
     /*font: 0.85em/1.35em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;*/
     line-height: 1.4;
@@ -94,6 +95,10 @@ container, div, h1, h2, h3, h4, h5, p {
     border: none;
 }
 
+.cursor {
+    cursor: url(http://www.icon100.com/up/3772/128/425-hand-pointer.png), auto;
+}
+
 .no-cursor {
     cursor: none;
 }
@@ -131,7 +136,7 @@ h2,
 h3,
 h4,
 .viewContainer {
-    font-family: "Comic Sans Ms";
+    font-family: "Comic Sans MS" !important;
 }
 /* #endregion */
 
@@ -198,9 +203,11 @@ header {
     background-image: url(../../images/blackboard.png);
     background-size: cover;
     border-bottom: 40px solid darkgoldenrod;
-    border-left: 0px solid darkgoldenrod;
-    border-right: 0px solid darkgoldenrod;
-    border-radius: 12px;   
+    border-left: 3px solid darkgoldenrod;
+    border-right: 3px solid darkgoldenrod;
+    border-radius: 12px;  
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 #projector {

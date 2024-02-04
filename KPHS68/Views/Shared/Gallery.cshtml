@@ -20,7 +20,7 @@
             return new Size(image.Width, image.Height);
         }
     }
-
+   
     // Get the folders for the menu links
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Shared";
     var galleryFolder = currentController
@@ -52,16 +52,16 @@
         var dimensions = GetImageDimensions(file);
         return new { ImagePath = imagePath, Dimensions = dimensions, };
     })
-    .OrderBy(entry => entry.Dimensions.Width)
-    .ThenBy(entry => entry.Dimensions.Height)
+    .OrderBy(entry => entry.Dimensions.Height)
+    .ThenBy(entry => entry.Dimensions.Width)
     .Select(entry => $"{entry.ImagePath}")
     .ToList();
 
     // Create thumbnail only if it doesn't exist
     var thumbnailService = new ThumbnailService();
 
-    int thumbnailWidth = 800;
-    int thumbnailHeight = 800;
+    int thumbnailWidth = 1280;
+    int thumbnailHeight = 960;
 
     foreach (var file in files)
     {
@@ -127,93 +127,169 @@
         }
     }
 }
+<style>
 
+    #Previous {
+        border: 1px solid transparent;
+    }        
+
+        #Previous:hover,
+        #Previous:active,
+        #Previous:focus {
+            border: 1px solid black;
+        }
+
+    #Next {
+        border: 1px solid transparent;
+    }
+
+        #Next:hover,
+        #Next:active,
+        #Next:focus {
+            border: 1px solid black;
+        }
+
+    #Copy {
+        border: 1px solid transparent;
+    }
+
+        #Copy:hover,
+        #Copy:active,
+        #Copy:focus {
+            border: 1px solid black;
+        }
+
+</style>
 <!-- Go to Top button -->
 <button type="button" onclick="topFunction()" id="top-button" title="Go to top">Top</button>
 
-<div class="row text-center mt-5 viewContainer">
-    <div class="col-12 text-start pt-4 ms-md-3 pe-md-5">
+<!-- Stores current image in Slide -->
+<input title="ImageLink" hidden type="text" spellcheck="false" value="" id="imageLink">
 
-        <!-- Link Button Menu -->
-        <div class="container row gx-0 gx-lg-4 justify-content-center g-1 g-lg-3 my-2 p-0">
+<!-- View Container Row -->
+<div class="row  mt-5 viewContainer p-0">
 
-            <!-- Back Link Button -->
-            <div class="col-1 menu-item">
-                <div class="bg-danger text-center p-0 border border border-dark rounded" style="width:50px; height: 35px;">
-                    <a title="menu-link" class="menu-link text-dark w-100" style="height: 34px; display: flex; align-items: center;" href="/@currentController">
-                        <img src="/lib/svg/buttons/back-white.svg" alt="Back" style="height: 24px;">
+    <!-- Menu Column -->
+    <div class="col-12 text-start pt-4 px-0">
+
+        <!-- Menu Container -->
+        <container>
+
+            <!-- Heading Row -->
+            <div class="row">
+
+                <!-- Back Link Button -->
+                <div class="col-1 ps-4 text-center d-flex">
+                    <a style="height: 26px; width:36px;" href="~/KPHS68Combo" id="back">
+                        <img style="height: 25px; width:24px;" src="/lib/svg/buttons/back-white.svg" alt="Home">
                     </a>
                 </div>
+                @* <div class="col-1 text-center d-flex">
+                <a style="height: 24px; width: 36px;" asp-controller="Home" asp-action="Index" id="back">
+                <img style="height: 24px; width:24px;" src="/lib/svg/buttons/back-white.svg" alt="Home">
+                </a>
+                </div> *@
+                <!-- Heading -->
+                <div class=" col-11 text-center my-2">
+                    <h2 class="text-white" style="margin-left:-40px;">
+                        @imagefolder
+                    </h2>
+                </div>
+
             </div>
 
-            <!-- Link Buttons -->
-            @foreach (var folder in folders)
-            {
-                <div class="col-1 menu-item" data-viewName="@folder">
-                    <div id="@folder" class="bg-gray-lighter text-center p-0 border border-dark rounded">
-                        <a title="menu-link" id="@folder-link" class="menu-link text-dark w-100" asp-controller="@currentController" asp-action="@targetView" asp-route-viewName="@folder">@folder</a>
-                    </div>
-                </div>
-            }
-        </div>
+            <!-- Gallery Links -->
+            <div class="container text-center my-2">
 
+                <!-- Folder Links -->
+                <div class="mx-auto">
+                    <ul class="list-unstyled d-inline-block" style="width:130px;">
+                        @foreach (var folder in folders)
+                        {
+                            <li class="mt-2 text-start">
+                                <a id="@folder-link" class="chalk-link fs-5" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+
+        </container>
+
+    </div>
+
+    <!-- Content Column -->
+    <div class="col-12 text-start pt-4 px-0">
+
+        <!-- Display Slideshows -->
         @if (galleryType == "Slideshows" || galleryType == "Combos")
         {
-            <style>
-                button {
-                    border: none;
-                    background-color: gainsboro;
-                }
+            
+            <!-- Slideshow Controls -->
+            <div id="my-group-1" class="row Container-fluid text-center">
 
-                .bg-gainsboro {
-                    background-color: gainsboro;
-                }
-            </style>
-
-            <!-- Input imageLink -->
-            <input title="ImageLink" hidden type="text" spellcheck="false" value="" id="imageLink">
-            @* <input title="ImageLink" type="text" spellcheck="false" value="" id="imageLink"> *@
-
-            <!-- Controls -->
-            <div id="my-button-group" class="Container-fluid row text-center">
-
+                <!-- Prev -->
                 <div class="col text-end p-0 m-0">
-                    <button type="button" id="Previous" title="Previous image">
+                    <button class="rounded-2" id="Previous" type="button" title="Previous image">
                         <img alt="Prev" style="width:24px; height: 26px;" src="/lib/svg/Buttons/Previous.svg"> Prev
                     </button>
                 </div>
+
+                <!-- Copy -->
                 <div class="col p-0 m-0 bg-gainsboro">
-                    <button type="button" title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
+                    <button class="rounded-2" id="Copy" type="button" title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
                         <img alt="Copy" style="width:26px; height:26px;" src="~/lib/svg/Buttons/Links.svg"> Copy Link
                     </button>
                 </div>
+
+                <!-- Next -->
                 <div class="col text-start p-0 m-0">
-                    <button type="button" id="Next" title="Next image">
+                    <button class="rounded-2" type="button" id="Next" title="Next image">
                         Next <img alt="Next" style="width:24px; height: 26px;" src="/lib/svg/Buttons/Next.svg">
                     </button>
                 </div>
 
             </div>
 
-            <!-- The Slideshow -->
-            <div class="container-fluid row ms-auto me-auto pb-3 pb-lg-3 px-0">
-                <div class="col-12 mx-sm-1 mx-md-0 carousel slide pb-0 pointer-event my-rounded" id="CarouselControl" data-bs-ride="carousel">
-                    <div class="my-rounded carousel-inner" id="CarouselItems">
-                        @foreach (var file in files)
-                        {
-                            <div class='w-100 bg-transparent carousel-item @(file == files.First() ? "active" : "")'>
-                                <img class='d-block h-100 mx-auto bg-gray-lighter p-2'
-                                     src="@Url.Content(System.IO.Path.Combine("/", galleriesFolder, galleryFolder, imagefolder, System.IO.Path.GetFileNameWithoutExtension(file) + "_thumb.jpg").Replace("\\", "/"))"
-                                     alt="@System.IO.Path.GetFileNameWithoutExtension(file).Substring(0, Math.Min(30, System.IO.Path.GetFileNameWithoutExtension(file).Length))" />
+            <div class="mt-1"></div>
+
+            <!-- My Slideshow -->
+            <div id="my-group-2" class="row container-fluid text-center p-0 m-0">
+
+                <!-- Column Carousel -->
+                <div class="col-12 p-0 m-0">
+
+                    <container class="p-0 m-0">
+
+
+
+                        <!-- Carousel Control-->
+                        <div id="CarouselControl" class="carousel slide pointer-event" data-bs-ride="carousel">
+
+                            <!-- Carousel Inner (CarouselItems) -->
+                            <div id="CarouselItems" class="carousel-inner">
+
+                                @foreach (var file in files)
+                                {
+                                    <div class='bg-transparent carousel-item  @(file == files.First() ? "active" : "")'>
+                                        <img class='d-block bg-gray-lighter p-2'
+                                             src="@Url.Content(System.IO.Path.Combine("/", galleriesFolder, galleryFolder, imagefolder, System.IO.Path.GetFileNameWithoutExtension(file) + "_thumb.jpg").Replace("\\", "/"))"
+                                             alt="@System.IO.Path.GetFileNameWithoutExtension(file).Substring(0, Math.Min(30, System.IO.Path.GetFileNameWithoutExtension(file).Length))" id="CarouselImage" />
+                                    </div>
+                                }
+
                             </div>
-                        }
-                    </div>
 
-                    <!-- Left And right controls -->
-                    <a title="prev" class="carousel-control-prev" href="#CarouselControl" role="button" data-bs-slide="prev"></a>
-                    <a title="next" class="carousel-control-next" href="#CarouselControl" role="button" data-bs-slide="next"></a>
+                            <!-- Left And right controls -->
+                            <a title="prev" class="carousel-control-prev" href="#CarouselControl" role="button" data-bs-slide="prev"></a>
+                            <a title="next" class="carousel-control-next" href="#CarouselControl" role="button" data-bs-slide="next"></a>
 
-                </div>
+                        </div>
+
+                    </container>
+
+                </div><!-- End Carousel Column -->
             </div>
         }
 
@@ -221,7 +297,7 @@
         {
 
             <!-- The Gallery -->
-            <div id="images-container" class="row g-0 g-sm-2 g-lg-2" style="display: none">
+            <div id="images-container" class="row g-2 g-sm-2 g-lg-2 bg-transparent" style="display: none">
 
                 <!-- Display each Image file and filename -->
                 @foreach (var file in files)
@@ -229,7 +305,7 @@
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3">
 
                         <!-- Link to file -->
-                        <a title="Click for full-screen." class="menu-link d-block text-center bg-gray-lighter" href="@Url.Content(file)" target="_blank">
+                        <a title="Click for full-screen." class="menu-link d-block text-center bg-gray-light" href="@Url.Content(file)" target="_blank">
 
                             <!-- file_thumb -->
                             <img class="w-100 img-fluid mx-auto" data-src="@Url.Content(System.IO.Path.Combine("/", galleriesFolder, galleryFolder, imagefolder, System.IO.Path.GetFileNameWithoutExtension(file) + "_thumb.jpg").Replace("\\", "/"))" alt="_Click Me_" />
@@ -243,29 +319,27 @@
                 }
             </div>
         }
+
     </div>
+
 </div>
 
-<!-- Spacing for Large Screens if needed -->
-<div class="gallery-view-bottom-spacing"></div>
+@* <!-- Spacing for Large Screens if needed -->
+<div class="gallery-view-bottom-spacing"></div> *@
 
-<!-- Replaces the background-image -->
-@* <script>
-    $("body").css("background-image", "url('../@Url.Content(backgroundImage)')");
-</script> *@
 
 <!-- Toggle the Current Menu Button to indicate it is selected -->
 <script>
     var mainElement = document.getElementById("@imagefolder");
     var secondaryElement = document.getElementById("@imagefolder-link");
 
-    mainElement.classList.toggle("bg-gray-lighter");
-    mainElement.classList.toggle("bg-gray-dark");
-    mainElement.style.pointerEvents = 'none';
+    @* mainElement.classList.toggle("bg-gray-lighter");
+        mainElement.classList.toggle("bg-gray-dark"); *@
+        mainElement.style.pointerEvents = 'none';
 
-    secondaryElement.classList.toggle("text-dark");
-    secondaryElement.classList.toggle("text-light");
-    secondaryElement.classList.add("selected");
+    @* secondaryElement.classList.toggle("text-dark");
+        secondaryElement.classList.toggle("text-light"); *@
+        secondaryElement.classList.add("selected");
 </script>
 
 <!-- Keep imageLink up to date each slide. -->
