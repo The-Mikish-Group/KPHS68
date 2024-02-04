@@ -190,23 +190,18 @@
             </div>
 
         </div>
-
-        <!-- Gallery Links -->
-        <div class="container text-center my-2">
-
-            <!-- Folder Links -->
-            <div class="mx-auto">
-                <ul class="list-unstyled d-inline-block" style="width:130px;">
-                    @foreach (var folder in folders)
-                    {
-                        <li class="mt-2 text-start">
-                            <a id="@folder-link" class="chalk-link fs-5" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
+                
+        <!-- Folder Links -->        
+        <div class="row mx-auto" style="width:300px;">
+            @foreach (var folder in folders)
+            {
+                <dir class="col-6 mt-2 text-start">
+                    <a id="@folder-link" class="chalk-link fs-6" asp-controller="@currentController" asp-action="Gallery" asp-route-viewName="@folder">@folder</a>
+                </dir>
+            }
+        </div>       
     </div>
+   
 
 <style>
     .slideshow-button {
@@ -328,11 +323,13 @@
 
     </div>
 
+    <div id="groove"></div>
+
 </div>
 
-@* <!-- Spacing for Large Screens if needed -->
-<div class="gallery-view-bottom-spacing"></div> *@
-
+<div id="chalk"></div>
+<div id="eraser"></div>
+<div id="ruler"></div>
 
 <!-- Toggle the Current Menu Button to indicate it is selected -->
 <script>
