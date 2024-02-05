@@ -60,8 +60,8 @@
     // Create thumbnail only if it doesn't exist
     var thumbnailService = new ThumbnailService();
 
-    int thumbnailWidth = 1280;
-    int thumbnailHeight = 960;
+    int thumbnailWidth = 640;
+    int thumbnailHeight = 480;
 
     foreach (var file in files)
     {
@@ -108,57 +108,55 @@
     {
         public void CreateOrRetrieveThumbnail(string file, string thumbnail, string thumbnailsPath, int thumbnailWidth, int thumbnailHeight)
         {
-            try
+            const int maxRetries = 3;
+            int retryCount = 0;
+
+            while (retryCount < maxRetries)
             {
-                if (!System.IO.File.Exists(thumbnail))
+                try
                 {
-                    CreateThumbnail(file, thumbnailsPath, thumbnailWidth, thumbnailHeight);
+                    if (!System.IO.File.Exists(System.IO.Path.Combine(thumbnailsPath, thumbnail).Replace("\\", "/")))
+                    {
+                        // Thumbnail doesn't exist, create it
+                        CreateThumbnail(file, thumbnailsPath, thumbnailWidth, thumbnailHeight);
+                    }
+                    return; // Thumbnail creation successful, exit the loop
+                }
+                catch (IOException ex) when (IsFileInUse(ex))
+                {
+                    // File is in use, wait for a short duration before retrying
+                    retryCount++;
+                    System.Threading.Thread.Sleep(1000); // Wait for 1 second before retrying
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error creating thumbnail: {ex.Message}");
+                    return; // Exit the loop on other exceptions
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error creating thumbnail: {ex.Message}");
-            }
+
+            Console.WriteLine($"Failed to create thumbnail after {maxRetries} retries.");
         }
 
         private void CreateThumbnail(string file, string thumbnailsPath, int thumbnailWidth, int thumbnailHeight)
         {
             ImageHelper.CreateThumbnail(file, thumbnailsPath, thumbnailWidth, thumbnailHeight);
         }
+
+        private bool IsFileInUse(Exception ex)
+        {
+            // Check if the exception is related to the file being in use
+            // This is a simplistic check, and you may need to enhance it based on specific exceptions you receive
+            return ex is IOException || (ex is UnauthorizedAccessException && ex.Message.Contains("being used by another process"));
+        }
     }
 }
 
-    #Previous {
-        border: 1px solid transparent;
-    }
+<!-- Loading Overlay... -->
+<div id="loading-overlay">
+    <div class="loading-spinner"></div>
+</div>
 
-        #Previous:hover,
-        #Previous:active,
-        #Previous:focus {
-            border: 1px solid black;
-        }
-
-    #Next {
-        border: 1px solid transparent;
-    }
-
-        #Next:hover,
-        #Next:active,
-        #Next:focus {
-            border: 1px solid black;
-        }
-
-    #Copy {
-        border: 1px solid transparent;
-    }
-
-        #Copy:hover,
-        #Copy:active,
-        #Copy:focus {
-            border: 1px solid black;
-        }
-
-</style>
 <!-- Go to Top button -->
 <button type="button" onclick="topFunction()" id="top-button" title="Go to top">Top</button>
 
@@ -175,14 +173,14 @@
         <div class="row">
 
             <!-- Back Link Button -->
-            <div class="col-2 text-end">
+            <div class="col-2 text-end my-0 mx-auto">
                 <div class="d-block">
-                    <a class="chalk-link fs-6" href="~/KPHS68Combo" id="xback">Back</a>
+                    <a id ="Back" class="chalk-link fs-6" href="~/KPHS68Combo">Back</a>
                 </div>
             </div>
 
             <!-- Gallery Links -->
-            <div class=" col-10 text-center my-0 mx-auto" style="width:300px;">
+            <div class="col-10 text-center my-0 mx-auto" style="width:260px;">
 
                 <!-- Folder Links -->
                 <div class="row">
@@ -324,8 +322,8 @@
 
 <div id="chalk"></div>
 <div id="eraser"></div>
-<div id="ruler"></div>
-
+@* <div id="ruler"></div>
+ *@
 <!-- Toggle the Current Menu Button to indicate it is selected -->
 <script>
 
@@ -408,7 +406,7 @@
     }
 </script>
 
-<!-- Image Carousel forward and backwards buttosn -->
+<!-- Image Carousel forward and backwards buttons -->
 <script>
     $('#Previous').click(function (e) {
         e.stopPropagation();

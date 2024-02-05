@@ -61,7 +61,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\Gallery\KPHS68\background.png" />
     <Content Include="wwwroot\Gallery\_siteImages\kphsLogo.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

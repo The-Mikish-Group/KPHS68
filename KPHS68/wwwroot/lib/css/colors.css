@@ -367,19 +367,6 @@ a {
     border-bottom: 2px dotted #80b24d;
     color: #80b24d;
 }
-#back {
-    border: 1px solid transparent;
-    border-radius: 3px;
-    background: transparent;
-}
-
-    #back:hover,
-    #back:focus,
-    #back:active {
-        border: 1px solid darkgreen;
-        background: #80b24d;
-        
-    }
 
     /* #region Slideshow bar buttons */
 #Previous {
@@ -411,5 +398,22 @@ a {
     #Copy:focus {
         border: 1px solid black;
     }
+
+.slideshow-button {
+    height: 28px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+    .slideshow-button:hover,
+    .slideshow-button:hover,
+    .slideshow-button:hover {
+        border: 1px solid black;
+    }
+
+.slideshow-button-image {
+    width: 26px;
+    height: 26px;
+}
 
 /* #endregion */

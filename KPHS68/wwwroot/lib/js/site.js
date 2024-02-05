@@ -1,36 +1,39 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+    // Display loading overlay
+    document.getElementById('loading-overlay').style.display = 'flex';
+
     // Lazy load Gallery
     var images = document.querySelectorAll("img[data-src]");
     var imagesContainer = document.getElementById("images-container");
 
-    if (imagesContainer) {
-        var observer = new IntersectionObserver(
-            function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        var img = entry.target;
-                        img.src = img.getAttribute("data-src");
-                        observer.unobserve(img);
-                    }
-                });
-            }
-        );
+    var observer = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var img = entry.target;
+                    img.src = img.getAttribute("data-src");
+                    observer.unobserve(img);
+                }
+            });
+        }
+    );
 
-        images.forEach(function (img) {
-            observer.observe(img);
-        });
+    images.forEach(function (img) {
+        observer.observe(img);
+    });
 
-        var checkLoadingCompletion = function () {
-            if (images && Array.from(images).every(img => img.complete)) {
-                imagesContainer.style.display = "flex";
-            } else {
-                setTimeout(checkLoadingCompletion, 100);
-            }
-        };
+    var checkLoadingCompletion = function () {
+        if (images && Array.from(images).every(img => img.complete)) {
+            imagesContainer.style.display = "flex";
+            // Hide loading overlay
+            document.getElementById('loading-overlay').style.display = 'none';
+        } else {
+            setTimeout(checkLoadingCompletion, 100);
+        }
+    };
 
-        checkLoadingCompletion();
-    }
-    // End Lazy Load
+    checkLoadingCompletion();
+    // End Lazy Load    
 
     // Display or hide the topbutton if the user has scrolled from the screen top
     window.onscroll = function () {
