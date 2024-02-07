@@ -106,19 +106,7 @@
     <script type="text/javascript" src="~/lib/js/site.js" asp-append-version="true"></script>
 
 </head>
-<body>
-    <style> 
-        .chalk-link {
-            text-decoration: none;
-            border-bottom: 2px dotted #b1b2b3;
-            color: white;
-        }
-
-        .dropdown-menu {
-            border: none;
-        }
-        
-    </style>
+<body>    
 
     <div id="top_grad"></div>
 
@@ -160,7 +148,7 @@
                         <a class="nav-link nav-link-fs dropdown-toggle" href="#" id="classmatesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Classmates
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="classmatesDropdown">
+                        <ul class="dropdown-menu" style="border: none;" aria-labelledby="classmatesDropdown">
 
                             <!-- Classmates -->
                             <li><a class="ms-3 dropdown-item nav-link nav-link-fs" target="_blank" href="https://www.classcreator.com/Chicago-IL-Kelvyn-Park-1968/class_classmates.cfm">Classmates</a></li>
@@ -184,7 +172,7 @@
                         <a class="nav-link nav-link-fs dropdown-toggle" href="#" id="yearbookDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             1968-2008
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="yearbookDropdown">                           
+                        <ul class="dropdown-menu" style="border: none;" aria-labelledby="yearbookDropdown">
 
                             <!-- Yearbook -->
                             <li><a class="ms-3 dropdown-item nav-link nav-link-fs" href="~/Pages/Yearbook.html">Yearbook</a></li>
@@ -212,7 +200,7 @@
     </header>    
 
     <!-- Main Content (Views) -->
-    <div class="container p-0" id="MainContainer">
+    <div class="container px-0" id="MainContainer">
         <main role="main" class="p-0">
             @RenderBody()
         </main>

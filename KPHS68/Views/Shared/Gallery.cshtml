@@ -197,26 +197,7 @@
         </div>
 
     </div>    
-
-    <style>
-        .slideshow-button {
-                height: 28px;
-                border: 1px solid transparent;
-                border-radius: 3px;
-        }
-
-            .slideshow-button:hover,
-            .slideshow-button:hover,
-            .slideshow-button:hover {
-                    border: 1px solid black;
-            }
-
-            .slideshow-button-image {
-                width: 26px;
-                height: 26px;            
-            }
-    </style>
-
+        
     <!-- Content Column -->
     <div class="col-12 text-start pt-4">
 
@@ -225,30 +206,30 @@
         {
 
             <!-- Slideshow Controls -->
-            <div id="SlideshowControls" class="row container-fluid text-center mb-2">
+            <div id="SlideshowControls" class="row text-center px-0 mb-2">
 
                 <!-- Prev -->
-                <div class="col text-end">
+                <div class="col-4 text-end">
                     <button id="Previous" class="slideshow-button" type="button" title="Previous image">
                         <img class="slideshow-button-image" alt="Prev" src="/lib/svg/Buttons/Previous.svg"> Prev
                     </button>
                 </div>
 
                 <!-- Copy -->
-                <div class="col text-center">
-                    <button id="Copy" class="slideshow-button" type="button" title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
-                        <img alt="Copy" class="slideshow-button-image" src="~/lib/svg/Buttons/Links.svg"> Copy 
-                        </button>
+                <div class="col-4 text-center">
+                    <button id="Copy" class="slideshow-button" type="button" title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()">
+                        <img alt="Copy" class="slideshow-button-image" src="/lib/svg/Buttons/Links.svg"> Copy
+                    </button>
                 </div>
 
                 <!-- Next -->
-                <div class="col text-start">
+                <div class="col-4 text-start">
                     <button id="Next" class="slideshow-button" type="button" title="Next image">
                         Next <img class="slideshow-button-image" alt="Next" src="/lib/svg/Buttons/Next.svg">
                     </button>
                 </div>
 
-            </div>            
+            </div>
 
             <!-- Slideshow -->
             <div id="my-group-2" class="row container-fluid text-center mb-2 mx-0 px-0">
@@ -314,7 +295,7 @@
             </div>
         }
 
-    </div>
+    </div><!-- End Content Column -->
 
     <div id="groove"></div>
 

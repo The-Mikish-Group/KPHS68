@@ -267,9 +267,15 @@
 /* #endregion */
 /* #endregion  */
 
+/* Set Horizontal Line */
+hr {
+    border: none;
+    border-top: 3px dotted #ffffff;
+}
+
 /* #region Resposive color changes */
 
-/* Responsive Link Hover and Active colors  in <a></a>*/
+/* Default <a> link */
 a {
     color: #ffffff /* text-white */
 }
@@ -279,7 +285,7 @@ a {
         color: #DEDFE0; /* text-gray */
     }
 
-/* Responsive link colors (link class)*/
+/* link */
 .link {
     color: #424143; /* almost black */
 }
@@ -290,9 +296,30 @@ a {
         color: #8e774d; /* text-gold */
     }
 
+/* chalk-link */
+.chalk-link {
+    text-decoration: none;
+    border-bottom: 2px dotted #b1b2b3;
+    color: white;
+}
+
+    .chalk-link:hover,
+    .chalk-link:active,
+    .chalk-link:focus {
+        color: #80b24d;
+    }
+
+/* chalk-link-selected */
+.chalk-link-selected {
+    text-decoration: none;
+    border-bottom: 2px dotted #80b24d;
+    color: #80b24d;
+}
+
+/* nav-link */
 .nav-link {
-    color: darkgreen;    
-}   
+    color: darkgreen;
+}
 
     .nav-link:active,
     .nav-link:hover,
@@ -300,13 +327,13 @@ a {
         color: #80b24d !important;
     }
 
-    .nav-pills .nav-link.active, .nav-pills.show > .nav-link {
+.nav-pills .nav-link.active,
+.nav-pills.show > .nav-link {
     color: #40996d;
     background-color: darkgreen;
     border-color: #1861ac;
 }
-
-/* Responsive Button Primary colors */
+/*  btn-primary Defaults */
 .btn-primary {
     color: white;
     background-color: #40996d; /* bg-green-dark */
@@ -320,8 +347,9 @@ a {
         border-color: #7d7e81; /* gray */
     }
 
-/* Used in Gallery Group Auto Top function
-   Must be #ID : Used by JS document.getElementById */
+/* #endregion */
+
+/* #region Top Button */
 #top-button {
     display: none;
     position: fixed;
@@ -342,33 +370,20 @@ a {
         background-color: #4A4B4C; /* bg-gray-dark */
     }
 
-/* Responsive Card colors */
+    #top-button:active {
+        background-color: #C72D27; /* bg-red-dark*/
+    }
 
+
+/* Responsive Nav colors */
 .siteNameBig, .siteNameSmall, nav-link, .nav-text > a {
     padding-left: 120px;
     color: #4f7d1f !important;
     transition: color 0.3s ease;
 }
+/* #endregion */
 
-.chalk-link {
-    text-decoration: none;
-    border-bottom: 2px dotted #b1b2b3;
-    color: white;
-}
-   
-    .chalk-link:hover,
-    .chalk-link:active,
-    .chalk-link:focus {
-        color: #80b24d;
-    }
-
-.chalk-link-selected {
-    text-decoration: none;
-    border-bottom: 2px dotted #80b24d;
-    color: #80b24d;
-}
-
-    /* #region Slideshow bar buttons */
+/* #region Slideshow bar buttons */
 #Previous {
     border: 1px solid transparent;
 }

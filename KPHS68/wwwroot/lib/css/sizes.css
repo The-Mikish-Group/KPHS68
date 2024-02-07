@@ -1,5 +1,6 @@
 #mainContainer {
     max-width: 828px;
+    margin-top: 0px;
 }
 
 
@@ -63,7 +64,11 @@
 /* #endregion */
 
 /* #region (BS -sm- ) (min-width: 575px) and (max-width: 768px) Smaller tablets */
-@media (min-width: 575px) and (max-width: 768px) {    
+@media (min-width: 575px) and (max-width: 768px) {
+
+    #mainContainer {
+        margin-top: 30px;
+    }
 
     /* #region Sizes */
     .carousel-item {
@@ -75,7 +80,11 @@
 /* #endregion  */
 
 /* #region (BS -md- ) (min-width: 768.01px) and (max-width: 991px) Large tablet styles */
-@media (min-width: 768.01px) and (max-width: 991px) {   
+@media (min-width: 768.01px) and (max-width: 991px) {
+
+    #mainContainer {
+        margin-top: 30px;
+    }
 
     /* #region Sizes */
     .carousel-item {
@@ -88,8 +97,8 @@
 /* #region (BS -lg- ) (min-width: 992px) Start of Desktop */
 @media (min-width: 992px) {
 
-    #mainContainer {
-        max-width: 828px;
+    #mainContainer {       
+        padding-top: 30px;
     }
 
     /* #region Sizes */
