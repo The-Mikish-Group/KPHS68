@@ -34,9 +34,6 @@ body {
     z-index: 50;
 }
 
-html > body #top_grad {
-    width: 100%;
-}
 #top_grad {
     position: absolute;
     top: 0;
@@ -54,7 +51,7 @@ html > body #top_grad {
 
 /* Nav Bar  and footer */
 header {
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
 }
@@ -202,7 +199,7 @@ header {
 
 .viewContainer {
     position: relative;
-    top: 110px;
+    top: 50px;
     line-height: 1.4;
     margin-left: auto;
     margin-right: auto;
@@ -231,7 +228,7 @@ header {
     height: 34px;
     position: relative;
     left: 230px;
-    top: 50px;
+    top: -62px;
     display: block;
     background: no-repeat url(../../images/eraser.png);
 }
@@ -240,8 +237,8 @@ header {
     width: 99px;
     height: 14px;
     position: relative;
-    left: 120px;
-    top: 80px;
+    left: 50px;
+    top: -28px;
     display: block;
     background: url(../../images/chalk.png) no-repeat;
 }
@@ -250,8 +247,8 @@ header {
     width: 28px;
     height: 415px;
     position: relative;
-    right: -580px;
-    top: -368px;
+    left: 860px;
+    top: -428px;
     display: none;
     background: url(../../images/ruler.png) no-repeat;
 }
@@ -399,7 +396,7 @@ header {
     }
 
     #ruler {
-        right: -838px;
+        left: 838px;
         display: block;
     }
 
@@ -434,7 +431,7 @@ header {
   
 
     #ruler {
-        right: -838px;
+        left: 838px;
     }
 
     /* #endregion */
@@ -468,7 +465,7 @@ header {
    
 
     #ruler {
-        right: -838px;
+        left: 1080px;
     }
 
     /* #endregion*/
